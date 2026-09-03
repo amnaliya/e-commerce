@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Vintage Camera",
+      "price": 2500,
+      "category":"Cameras",
+      "image":"https://i.pinimg.com/1200x/aa/d9/72/aad9726fb280fbfabdc2ae30bb80c9dd.jpg"
+    },
+    {
+       "id": "2",
+      "name": "Vintage Camera 2",
+      "price": 2500,
+      "category":"Cameras",
+      "image":"https://i.pinimg.com/736x/fb/28/87/fb2887a6f760744c4740d92fb5ef7452.jpg"
+    },
+     {
+       "id": "3",
+      "name": "Vintage Camera 3",
+      "price": 2500,
+      "category":"Cameras",
+      "image":"https://i.pinimg.com/1200x/67/d3/c0/67d3c0513204b3fc5ba5df4c0a78cd8c.jpg"
+    },
+       {
+       "id": "4",
+      "name": "Vintage record",
+      "price": 2500,
+      "category":"Vinyl records",
+      "image":"https://i.pinimg.com/736x/85/60/53/8560535e3d9d333dac735bc1305ae627.jpg"
+    },
+      {
+       "id": "5",
+      "name": "Vintage record 2",
+      "price": 2500,
+      "category":"Vinyl records",
+      "image":"https://i.pinimg.com/736x/91/f4/a5/91f4a5f2d993db62e9f251e63baa1728.jpg"
+    },  {
+       "id": "6",
+      "name": "Vintage record 3",
+      "price": 2500,
+      "category":"Vinyl records",
+      "image":"https://i.pinimg.com/736x/d0/46/21/d04621bffb05da02263b43eab43102d8.jpg"
+    }
+
+  ],
+  "users": [
+    {
+      "name": "amna liya",
+      "email": "amna@gmail.com",
+      "password": "12345",
+      "confirm": "12345",
+      "id": "L7OI6yeAUbg"
+    }
+  ],
+  "orders": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

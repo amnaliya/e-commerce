@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { toast } from "react-toastify"
 
 
 
@@ -16,21 +17,21 @@ function Register(){
     const handleregister=async(e)=>{
         e.preventDefault();
          if(name === "" || email==="" || password==="" || confirm===""){
-            alert("PLEASE FILL ALL THE FIELDS")
+            toast.error("PLEASE FILL ALL THE FIELDS")
             return;
         }
         if(password !== confirm){
-            alert("Passwords do not match")
+            toast.error("Passwords do not match")
             return;
         }
        const newuser= {name,email,password};
        try{
         await axios.post("http://localhost:3000/users",newuser)
-        alert("Account Created Successfully!")
+        toast.success("Account Created Successfully!")
         navigate("/login")
        }
        catch(error){
-        alert("something went wrong")
+        toast.warning("something went wrong")
        }
     }
     return (

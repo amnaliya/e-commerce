@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 
 function Shop(){
@@ -23,16 +23,17 @@ catch(error){
         <>
         <div>
             <h1>SHOP</h1>
+
             <div className="grid grid-cols-3 gap-6 p-8">
         {products.map((value)=>(
-            <div key={value.id}
+            <Link to={`/product/${value.id}`}  key={value.id}
             className="overflow-hidden rounded-lg bg-white shadow-sm">
                 <img src={value.image} alt={value.name} className="w-full h-72 object-cover" />
                 <div className="p-5">
                 <h2 className="font-lg font-serif text-[#4A2C22]  ">{value.name}</h2>
                 <p className="font-semibold text-[#1F4D3A] mt-2">₹{value.price}</p>
                 </div>
-                </div>
+                </Link>
         ))}
             </div>
         </div>

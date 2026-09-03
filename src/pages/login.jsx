@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Login(){
     const navigate=useNavigate();
@@ -11,25 +12,26 @@ function Login(){
     const handlelogin=async (e)=>{
      e.preventDefault();
      if(email==="" || password ===""){
-        alert("Please Fill The Fields")
+        toast.warning("Please Fill The Fields")
         return;
      }
      try{
         const response=await axios.get(`http://localhost:3000/users?email=${email}`)
         const user=response.data[0];
         if(!user){
-            return (alert("User Not Found"))
+        toast.error("User Not Found")
+        return
         }
         if(user.password !== password){
-            alert("Incorrect Password")
+            toast.error("Incorrect Password")
             return;
         }
-        alert("Login Successfull!!")
-        localStorage.setItem("userid",user.id)
+        toast.success("Login Successfull!!")
+        // localStorage.setItem("userid",user.id)
         navigate("/")
      }
      catch(error){
-        alert("Something went Wrong")
+        toast.warning("Something went Wrong")
         return;
      }
     }

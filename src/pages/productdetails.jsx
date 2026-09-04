@@ -2,10 +2,13 @@
 import { useParams } from "react-router-dom"
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import {Cartcontext} from "../context/cartcontext";
 
 
 function Productdetails(){
-    const[product,setproduct]=useState("")
+    const {addtocart}=useContext(Cartcontext);
+    const[product,setproduct]=useState("");
     const {id}=useParams();
 
     useEffect(()=>{
@@ -39,7 +42,8 @@ function Productdetails(){
             <h1 className=" mt-4 font-serif text-5xl text-[#4A2C22]">{product.name}</h1>
             <p className="mt-4 font-semibold text-[#1F4D3A] text-2xl">₹{product.price}</p>
             <p className="mt-6 text-gray-700 text-md text-xl">{product.description}</p>
-            <button className="bg-[#1F4D3A] rounded-lg mt-4 w-full text-white font-medium p-5">Add To Cart</button>
+            <button onClick={()=>addtocart(product)}
+             className="bg-[#1F4D3A] rounded-lg mt-4 w-full text-white font-medium p-5">Add To Cart</button>
 
         </div>
         </div>

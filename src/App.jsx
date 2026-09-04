@@ -12,6 +12,8 @@ import Productdetails from "./pages/productdetails"
 import './App.css'
 import { Route, Routes,BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import Cart from './pages/cart';
+import Checkout from './pages/checkout';
 
 function App() {
   
@@ -29,6 +31,8 @@ function App() {
   <Route path="/register" element={<Register />} />
   <Route path="/login" element={<Login />} />
   <Route path='/product/:id' element={<Productdetails />} />
+  <Route path='/cart' element={<Cart />} />
+  <Route path='/checkout' element={<Checkout />} />
  </Routes>
 
  <Footer />

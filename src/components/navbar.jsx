@@ -33,7 +33,7 @@ function Navbar(){
                 <Heart size={21} />
             </button>
 
-            <button>
+            <button onClick={()=>navigation("/cart")}>
                 <ShoppingCart size={21} />
             </button>
 

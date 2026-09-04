@@ -1,6 +1,8 @@
 import { Cartcontext } from "../context/cartcontext";
 import { useContext,useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Checkout(){
     const[name,setname]=useState("")
@@ -10,22 +12,34 @@ function Checkout(){
     const[pincode,setpincode]=useState("")
     const[number,setnumber]=useState("")
 
-const {cart}=useContext(Cartcontext)
+    const navigate=useNavigate();
+
+const {cart,clearcart}=useContext(Cartcontext)
 const total=cart.reduce((total,product)=>{
     return total + product.price * product.quantity
 },0)
 
-function handleorder(){
-    if(!name ||
-        !email||
-        !address ||
-        !city ||
-        !pincode ||
-        !number
-    ){
+async function handleorder(){
+    if(!name ||!email||!address ||!city ||!pincode ||!number){
     toast.warning("please fill all the fields")
     return;}
+
+    const order={
+        name,email,address,city,pincode,number,total
+    };
+    try{
+    const response=await axios.post("http://localhost:3000/orders",
+        order
+    );
+    console.log(response.data);
     toast.success("order placed successfully")
+    navigate("/ordersuccess")
+    clearcart();
+}
+catch(error){
+    console.log(error)
+    toast.error("something went wrong")
+}
 }
 
 

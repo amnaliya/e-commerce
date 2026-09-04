@@ -4,89 +4,96 @@
       "id": "1",
       "name": "Vintage Camera",
       "price": 2500,
-      "category":"Cameras",
-      "image":"/images/vintage camera 1.jpg",
+      "category": "Cameras",
+      "image": "/images/vintage camera 1.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
     },
     {
-       "id": "2",
+      "id": "2",
       "name": "Vintage Camera 2",
       "price": 2500,
-      "category":"Cameras",
-      "image":"/images/vintage camera 2.jpg",
+      "category": "Cameras",
+      "image": "/images/vintage camera 2.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
     },
-     {
-       "id": "3",
+    {
+      "id": "3",
       "name": "Vintage Camera 3",
       "price": 2500,
-      "category":"Cameras",
-      "image":"/images/vintage camer 3.jpg",
+      "category": "Cameras",
+      "image": "/images/vintage camer 3.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
     },
-       {
-       "id": "4",
+    {
+      "id": "4",
       "name": "Vintage Camera 4",
       "price": 2500,
-      "category":"Cameras",
-      "image":"/images/vintage camera 4.jpg",
+      "category": "Cameras",
+      "image": "/images/vintage camera 4.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
     },
-      {
-       "id": "5",
+    {
+      "id": "5",
       "name": "Vintage record 1",
       "price": 2500,
-      "category":"Vinyl records",
-      "image":"/images/vinyl records 1.jpg",
+      "category": "Vinyl records",
+      "image": "/images/vinyl records 1.jpg",
       "description": "A beautiful vinyl record for collectors."
-    },  {
-       "id": "6",
+    },
+    {
+      "id": "6",
       "name": "Vintage record 2",
       "price": 2500,
-      "category":"Vinyl records",
-      "image":"/images/vinyl records 2.jpg",
+      "category": "Vinyl records",
+      "image": "/images/vinyl records 2.jpg",
       "description": "A beautiful vinyl record for collectors."
-    },  {
-       "id": "7",
+    },
+    {
+      "id": "7",
       "name": "Vintage record 3",
       "price": 2500,
-      "category":"Vinyl records",
-      "image":"/images/vinyl records 3.jpg",
+      "category": "Vinyl records",
+      "image": "/images/vinyl records 3.jpg",
       "description": "A beautiful vinyl record for collectors."
-    },  {
-       "id": "8",
+    },
+    {
+      "id": "8",
       "name": "Vintage record 4",
       "price": 2500,
-      "category":"Vinyl records",
-      "image":"/images/midlaj.jpeg",
+      "category": "Vinyl records",
+      "image": "/images/midlaj.jpeg",
       "description": "A beautiful vinyl record for collectors."
-    },  {
-       "id": "9",
+    },
+    {
+      "id": "9",
       "name": "Vintage clock",
       "price": 2500,
-      "category":"Accessories",
-      "image":"/images/vintage clock 1.jpg",
+      "category": "Accessories",
+      "image": "/images/vintage clock 1.jpg",
       "description": "A beautiful vintage clock for collectors."
-    },  {
-       "id": "10",
+    },
+    {
+      "id": "10",
       "name": "Vintage mirror 1",
       "price": 2500,
-      "category":"Collectibles",
-      "image":"/images/vintage mirror 1.jpg",
+      "category": "Collectibles",
+      "image": "/images/vintage mirror 1.jpg",
       "description": "A beautiful vintage mirror for collectors."
-    },  {
-       "id": "11",
+    },
+    {
+      "id": "11",
       "name": "Vintage mirror 2",
       "price": 2500,
-      "category":"Collectibles",
-      "image":"/images/vintage mirror 2.jpg",
+      "category": "Collectibles",
+      "image": "/images/vintage mirror 2.jpg",
       "description": "A beautiful vintage mirror for collectors."
-    },  {
-       "id": "12",
+    },
+    {
+      "id": "12",
       "name": "Vintage watch 1",
       "price": 2500,
-      "category":"Accessories",
-      "image":"/images/vintage watch 1.jpg",
+      "category": "Accessories",
+      "image": "/images/vintage watch 1.jpg",
       "description": "A beautiful vintage watch for collectors."
     }
   ],
@@ -99,6 +106,37 @@
       "id": "L7OI6yeAUbg"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "name": "Shahina KT",
+      "email": "ktshahina578@gmail.com",
+      "address": "Puthiyaveetil house vallikkunnu athanikk",
+      "city": "Ariyallur",
+      "pincode": "673314",
+      "number": "09744702891",
+      "total": 2500,
+      "id": "GiDe2R9N250"
+    },
+    {
+      "name": "Shahina KT",
+      "email": "ktshahina578@gmail.com",
+      "address": "Puthiyaveetil house vallikkunnu athanikk",
+      "city": "Ariyallur",
+      "pincode": "673314",
+      "number": "09744702891",
+      "total": 5000,
+      "id": "fMA5x3qJTv0"
+    },
+    {
+      "name": "fezin sharaf",
+      "email": "shemiamk@gmail.com",
+      "address": "vilakkumadathil(h),pallikkal bazaar pallikkal po,\nmalappuram,kerala",
+      "city": "kondotty",
+      "pincode": "673593",
+      "number": "09947954719",
+      "total": 2500,
+      "id": "n8zTdEOYMv8"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

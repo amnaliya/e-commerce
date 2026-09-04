@@ -14,6 +14,7 @@ import { Route, Routes,BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Cart from './pages/cart';
 import Checkout from './pages/checkout';
+import Ordersuccess from './pages/ordersuccess';
 
 function App() {
   
@@ -33,6 +34,7 @@ function App() {
   <Route path='/product/:id' element={<Productdetails />} />
   <Route path='/cart' element={<Cart />} />
   <Route path='/checkout' element={<Checkout />} />
+  <Route path='/ordersuccess' element={<Ordersuccess />} />
  </Routes>
 
  <Footer />

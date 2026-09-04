@@ -25,7 +25,6 @@ export const Cartcontext=createContext();
     previous.map((item)=>item.id ===id?
     {...item,quantity:item.quantity +1} : item))
     }
-
     const decreasing=(id)=>{
         setcart((previous)=>
         previous.map((item)=>item.id === id ?

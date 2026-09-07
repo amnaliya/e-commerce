@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { loginuser } from "../redux/authslice";
 
 function Login(){
     const navigate=useNavigate();
+    const dispatch=useDispatch();
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
 
@@ -26,8 +29,15 @@ function Login(){
             toast.error("Incorrect Password")
             return;
         }
+        localStorage.setItem("userid", user.id);
+        localStorage.setItem("userrole", user.role);
+
+        dispatch(loginuser({
+            userid:user.id,
+            userrole:user.role
+        }))
         toast.success("Login Successfull!!")
-        // localStorage.setItem("userid",user.id)
+
         navigate("/")
      }
      catch(error){

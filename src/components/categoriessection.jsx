@@ -3,6 +3,7 @@ import vinylrecord from "../assets/vinyl record cover.jpg"
 import retroposter from "../assets/posters.png"
 import accessories from "../assets/accessories cover.png"
 import collectibles from "../assets/collectibles cover.png"
+import { Link } from "react-router-dom"
 
 
 
@@ -26,7 +27,9 @@ function Categorysection(){
 
             <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
-                <img src={cameracover}  className="object-cover h-full" alt="vintage camera cover page" />
+                <Link to="/categories/Cameras">
+                <img src={cameracover}  className="object-cover h-full" alt="vintage camera cover page" /> 
+                </Link>
             </div>
             <h3 className="mt-4  text-[#4A2C22] font-serif text-lg font-semibold">
             Vintage Camera
@@ -35,7 +38,9 @@ function Categorysection(){
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
+                <Link to="/categories/Vinyl Records">
                 <img src={vinylrecord}className="h-full object-cover"  alt="vinyl records" />
+                </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Vinyl Records
@@ -44,7 +49,9 @@ function Categorysection(){
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
+                <Link to="/categories/Vinyl Records">
                 <img src={retroposter} className="object-cover h-full" alt="retro posters" />
+                </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Retro Posters
@@ -53,7 +60,9 @@ function Categorysection(){
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
+                <Link to="/categories/Accessories">
                 <img src={accessories} className="object-cover h-full" alt="accessories" />
+                </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Accessories
@@ -62,7 +71,9 @@ function Categorysection(){
 
             <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
+                <Link to="/categories/Collectibles">
                 <img src={collectibles} className="object-cover h-full" alt="retro posters" />
+                </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Collectibles

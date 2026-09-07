@@ -1,9 +1,26 @@
 import { Heart, Search, ShoppingCart, User } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useSearchParams } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
+import { logout } from "../redux/authslice";
+import { useState } from "react";
 
 function Navbar(){
-    const navigation=useNavigate()
+    
+    const [searchParams]=useSearchParams()
+    const[search,setsearch]=useState( searchParams.get("search") || "")
+    const navigation=useNavigate();
+    const userid=useSelector((state)=>state.auth.userid);
+    const role=useSelector((state)=>state.auth.role);
+    const dispatch=useDispatch();
+
+    function handlelogout(){
+        localStorage.removeItem("userid")
+        localStorage.removeItem("userrole");
+        dispatch(logout());
+        navigation("/login");
+    }
+
     return (
         <>
         <nav className="border-b border-stone-200 bg-[#f7f3eb]">
@@ -18,18 +35,23 @@ function Navbar(){
 <div className="flex items-center gap-6 text-sm font-medium text-stone-700">
     <Link to="/" className="transition hover:text-[#a95b3c]">HOME</Link>
     <Link to="/shop" className="transition hover:text-[#a95b3c]">SHOP</Link>
-    <Link to="/collections" className="transition hover:text-[#a95b3c]">COLLECTIONS</Link>
     <Link to="/categories" className="transition hover:text-[#a95b3c]">CATEGORIES</Link>
     <Link to="/about" className="transition hover:text-[#a95b3c]">ABOUT US</Link>
 
 </div>
 <div className="flex items-center justify-between gap-5 text-[#292820]">
 
-            <button>
-                <Search size={21} />
-            </button>
+            <div className="relative">
+            <input type="text" value={search} onChange={(e)=>setsearch(e.target.value)} placeholder="Search products..."
+        className="w-52 rounded-full border border-stone-300 bg-white py-2 pl-4 pr-10 text-sm outline-none focus:border-[#1F4D3A]"/>
+    <Search
+        size={18}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500"
+        onClick={()=>navigation(`/shop?search=${search}`)}
+    />
+</div>
 
-            <button>
+            <button onClick={()=>navigation("/wishlist")}>
                 <Heart size={21} />
             </button>
 
@@ -37,9 +59,23 @@ function Navbar(){
                 <ShoppingCart size={21} />
             </button>
 
-             <button onClick={()=>navigation("/login")}>
+             <button onClick={()=>{
+                if(userid){
+                    // navigation("/profile")
+                    alert("logged in")
+                }else{
+                navigation("/login")
+                }}}>
                 <User size={21} />
             </button>
+             {userid && (
+        <button
+            onClick={handlelogout}
+            className="text-sm font-medium hover:text-[#a95b3c]"
+        >
+            LOGOUT
+        </button>
+    )}
 
           </div>
 

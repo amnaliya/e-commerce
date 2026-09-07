@@ -1,18 +1,37 @@
-import { useContext } from "react";
-import { Cartcontext } from "../context/cartcontext";
+// import { useContext } from "react";
+// import { Cartcontext } from "../context/cartcontext";
 import { useNavigate } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
+import { addtocart,increasing,decreasing,removing,setcart } from "../redux/cartslice";
+import { useEffect } from "react";
+import { getcart ,updatecart,deleting} from "../services/cartservices";
+
 
 function Cart(){
- const {cart,increasing,decreasing,removing} =useContext(Cartcontext);
  const navigate=useNavigate();
+ const cart=useSelector((state)=>state.cart.items)
+ const userid=useSelector((state)=>state.auth.userid)
+ const dispatch=useDispatch();
  
- const total=cart.reduce((total,product)=>{
+ const fetchcart = async () => {
+        const data = await getcart(userid);
+        dispatch(setcart(data));
+    };
+
+    useEffect(()=>{
+      if(userid){
+        fetchcart()
+      }
+ },[userid,dispatch])
+
+  const total=cart.reduce((total,product)=>{
     return total + product.price * product.quantity
  },0)
+  
 
  return (
     <>
-    <div className="min-h-screen bg-[#f7f3eb px-5 py-10">
+    <div className="min-h-screen bg-[#f7f3eb] px-5 py-10">
     <div className="mx-auto max-w-6xl">
         <h1 className="text-3xl font-bold font-serif text-[#4A2C22] mb-5 text-center ">Your Cart</h1>
 
@@ -33,12 +52,21 @@ function Cart(){
 
                         <div className="flex items-center gap-3 mt-3">
                             <button className="flex h-9 w-9 items-center justify-center border border-[#4A2C22] text-lg text-[#4A2C22]" 
-                            onClick={()=>decreasing(value.id)}>-</button>
+                            onClick={async()=>{
+                          const newquantity=value.quantity -1
+                          await updatecart(value.id,newquantity)
+                            dispatch(decreasing(value.id))}}>-</button>
                         <p className="text-lg font-medium">QUANTITY:{value.quantity}</p>
                         <button className="flex h-9 w-9 items-center justify-center border border-[#4A2C22] text-lg text-[#4A2C22]"
-                         onClick={()=>increasing(value.id)}>+</button>
+                         onClick={async()=>{
+                          const newquantity=value.quantity +1
+                          await updatecart(value.id,newquantity)
+                         dispatch(increasing(value.id))}}>+</button>
                         </div>
-                        <button onClick={()=>removing(value.id)} className="mt-4 rounded-md bg-red-500 px-4 py-2 text-white">Remove from cart</button>
+                        <button onClick={async()=>{
+                          await deleting(value.id)
+                          dispatch(removing(value.id))
+                        }} className="mt-4 rounded-md bg-red-500 px-4 py-2 text-white">Remove from cart</button>
                     </div>
                     </div>
                 ))}

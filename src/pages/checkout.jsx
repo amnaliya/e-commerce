@@ -3,6 +3,9 @@ import { useContext,useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
+import { addtocart,clearcart } from "../redux/cartslice";
+import { clearcart as clearcartapi } from "../services/cartservices";
 
 function Checkout(){
     const[name,setname]=useState("")
@@ -12,9 +15,12 @@ function Checkout(){
     const[pincode,setpincode]=useState("")
     const[number,setnumber]=useState("")
 
-    const navigate=useNavigate();
+    const dispatch=useDispatch();
+    const cart=useSelector((state)=>state.cart.items)
+    const userid=useSelector((state)=>state.auth.userid)
 
-const {cart,clearcart}=useContext(Cartcontext)
+    const navigate=useNavigate();
+// const {cart,clearcart}=useContext(Cartcontext)
 const total=cart.reduce((total,product)=>{
     return total + product.price * product.quantity
 },0)
@@ -25,7 +31,7 @@ async function handleorder(){
     return;}
 
     const order={
-        name,email,address,city,pincode,number,total
+        userid,name,email,address,city,pincode,number,total,items:cart
     };
     try{
     const response=await axios.post("http://localhost:3000/orders",
@@ -33,8 +39,10 @@ async function handleorder(){
     );
     console.log(response.data);
     toast.success("order placed successfully")
+    await clearcartapi(userid);
+    dispatch(clearcart());
     navigate("/ordersuccess")
-    clearcart();
+    
 }
 catch(error){
     console.log(error)

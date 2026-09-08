@@ -49,7 +49,7 @@ function Categorysection(){
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
-                <Link to="/categories/Vinyl Records">
+                <Link to="/categories/Retro Posters">
                 <img src={retroposter} className="object-cover h-full" alt="retro posters" />
                 </Link>
             </div>

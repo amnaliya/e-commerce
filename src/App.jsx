@@ -19,6 +19,7 @@ import Protectedroute from './routes/protectedroute';
 import Wishlist from './pages/wishlist'
 // import Cameracategory from './pages/cameracategory'
 import Categories from './pages/categories';
+import Categoryproducts from './pages/categoryproducts';
 
 function App() {
   
@@ -36,7 +37,7 @@ function App() {
   <Route path="/login" element={<Login />} />
   <Route path='/product/:id' element={<Productdetails />} />
   {/* <Route path='/categories/camera' element={<Cameracategory />} /> */}
-  <Route path="/categories/:category" element={<Categories />} />
+  <Route path="/categories/:category" element={<Categoryproducts />} />
 
   <Route element={<Protectedroute />}>
   <Route path='/wishlist' element={<Wishlist />} />

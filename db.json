@@ -110,7 +110,8 @@
       "name": "ridaaaa",
       "email": "rida@gmail.com",
       "password": "ridamol",
-      "id": "Lytr8t--9mA"
+      "id": "Lytr8t--9mA",
+      "role": "user"
     }
   ],
   "orders": [
@@ -278,36 +279,75 @@
         }
       ],
       "id": "6h1hT0VfFio"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "AMANA PV",
+      "email": "amana@gmail.com",
+      "address": "Puthiyaveetil house vallikkunnu athanikk\nNutrition center athanikkal vallikkunnu",
+      "city": "Ariyallur",
+      "pincode": "673314",
+      "number": "07907242734",
+      "total": 2500,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "3",
+          "name": "Vintage Camera 3",
+          "price": 2500,
+          "image": "/images/vintage camer 3.jpg",
+          "quantity": 1,
+          "id": "H_Tdrl0SHQU"
+        }
+      ],
+      "id": "iaHn-54ytyw"
     }
   ],
   "cart": [
     {
       "userid": "L7OI6yeAUbg",
-      "productId": "3",
-      "name": "Vintage Camera 3",
+      "productId": "8",
+      "name": "Vintage record 4",
       "price": 2500,
-      "image": "/images/vintage camer 3.jpg",
-      "quantity": 2,
-      "id": "XF26pf_6I88"
+      "image": "/images/midlaj.jpeg",
+      "quantity": 1,
+      "id": "UdUovM_BtGE"
     },
     {
       "userid": "L7OI6yeAUbg",
-      "productId": "9",
-      "name": "Vintage clock",
+      "productId": "2",
+      "name": "Vintage Camera 2",
       "price": 2500,
-      "image": "/images/vintage clock 1.jpg",
+      "image": "/images/vintage camera 2.jpg",
       "quantity": 3,
-      "id": "LMTMW4gKIn8"
+      "id": "sKOtbLeBdjI"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "1",
+      "name": "Vintage Camera",
+      "price": 2500,
+      "image": "/images/vintage camera 1.jpg",
+      "quantity": 1,
+      "id": "NC81KXgY-nI"
     }
   ],
   "wishlist": [
     {
       "userid": "L7OI6yeAUbg",
-      "productId": "9",
-      "name": "Vintage clock",
+      "productId": "11",
+      "name": "Vintage mirror 2",
       "price": 2500,
-      "image": "/images/vintage clock 1.jpg",
-      "id": "xfgN9UTnvXA"
+      "image": "/images/vintage mirror 2.jpg",
+      "id": "A-lHSPRO7dY"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "10",
+      "name": "Vintage mirror 1",
+      "price": 2500,
+      "image": "/images/vintage mirror 1.jpg",
+      "id": "nsGZCshlrog"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

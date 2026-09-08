@@ -54,7 +54,7 @@ function Productdetails(){
         value.productId===product.id)
 
         if(existing){
-             try{
+    try{
         await deleting(existing.id);
         dispatch(removefromwishlist(product.id));
         toast.info("removed from wishlist");

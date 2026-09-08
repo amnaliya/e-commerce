@@ -16,8 +16,13 @@ function Ordersuccess(){
             <h1 className="text-3xl font-bold text-[#5c4033] font-serif mt-5">Order Placed Succesfully</h1>
             <p className="text-xl font-semibold text-gray-600  mt-7">Thank you for shopping with Yesterra.<br />
           Your order has been placed successfully.</p>
-          <button className="rounded-md bg-[#5c4033] px-7 mt-12 py-3 font-semibold text-white transition hover:bg-[#8b6f47]"
+
+          <div className="grid grid-col-1">
+          <button className="rounded-md bg-[#5c4033] px-7 mt-8 py-3 font-semibold text-white transition hover:bg-[#8b6f47]"
            onClick={()=>navigate("/shop")}>Continue Shopping</button>
+            <button className="rounded-md bg-[#5c4033] px-7 mt-6 py-3 font-semibold text-white transition hover:bg-[#8b6f47]"
+           onClick={()=>navigate("/orders")}>View Order Summary</button>
+           </div>
         </div>
     </div>
     </>

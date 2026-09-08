@@ -116,171 +116,6 @@
   ],
   "orders": [
     {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 2500,
-      "id": "GiDe2R9N250"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 5000,
-      "id": "fMA5x3qJTv0"
-    },
-    {
-      "name": "fezin sharaf",
-      "email": "shemiamk@gmail.com",
-      "address": "vilakkumadathil(h),pallikkal bazaar pallikkal po,\nmalappuram,kerala",
-      "city": "kondotty",
-      "pincode": "673593",
-      "number": "09947954719",
-      "total": 2500,
-      "id": "n8zTdEOYMv8"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 2500,
-      "id": "V9xsBVDEkp0"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 5000,
-      "id": "baGBNSFA-vI"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 12500,
-      "id": "-csEqdLrJ9s"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 2500,
-      "id": "51mr3sgRD0Y"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 5000,
-      "id": "7lzcu6MtrG4"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 5000,
-      "id": "MFrIKFBMd40"
-    },
-    {
-      "name": "Shahina KT",
-      "email": "ktshahina578@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "09744702891",
-      "total": 42500,
-      "id": "GtQ0m6Cg5Ys"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "name": "AMANA PV",
-      "email": "amana@gmail.com",
-      "address": "Puthiyaveetil house vallikkunnu athanikk\nNutrition center athanikkal vallikkunnu",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "07907242734",
-      "total": 0,
-      "items": [],
-      "id": "K-eWIvzCNjc"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "name": "AMANA PV",
-      "email": "adargvae",
-      "address": "Puthiyaveetil house vallikkunnu athanikk\nNutrition center athanikkal vallikkunnu",
-      "city": "Ariyallur",
-      "pincode": "673314",
-      "number": "07907242734",
-      "total": 5000,
-      "items": [
-        {
-          "userid": "L7OI6yeAUbg",
-          "productId": "1",
-          "name": "Vintage Camera",
-          "price": 2500,
-          "image": "/images/vintage camera 1.jpg",
-          "quantity": 2,
-          "id": "lfu_GP5oBRc"
-        }
-      ],
-      "id": "wB9ZpOoanAU"
-    },
-    {
-      "userid": "Lytr8t--9mA",
-      "name": "rida",
-      "email": "rida@gmail.com",
-      "address": "paredath (h),pookkiparambu",
-      "city": "kottakkal",
-      "pincode": "673638",
-      "number": "09633674871",
-      "total": 5000,
-      "items": [
-        {
-          "userid": "Lytr8t--9mA",
-          "productId": "8",
-          "name": "Vintage record 4",
-          "price": 2500,
-          "image": "/images/midlaj.jpeg",
-          "quantity": 1,
-          "id": "aHjhES1Y1gE"
-        },
-        {
-          "userid": "Lytr8t--9mA",
-          "productId": "6",
-          "name": "Vintage record 2",
-          "price": 2500,
-          "image": "/images/vinyl records 2.jpg",
-          "quantity": 1,
-          "id": "EQxGCsAeL-w"
-        }
-      ],
-      "id": "6h1hT0VfFio"
-    },
-    {
       "userid": "L7OI6yeAUbg",
       "name": "AMANA PV",
       "email": "amana@gmail.com",
@@ -301,9 +136,58 @@
         }
       ],
       "id": "iaHn-54ytyw"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "AMANA PV",
+      "email": "stheewbyn",
+      "address": "Puthiyaveetil house vallikkunnu athanikk\nNutrition center athanikkal vallikkunnu",
+      "city": "Ariyallur",
+      "pincode": "673314",
+      "number": "07907242734",
+      "total": 12500,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "8",
+          "name": "Vintage record 4",
+          "price": 2500,
+          "image": "/images/midlaj.jpeg",
+          "quantity": 1,
+          "id": "UdUovM_BtGE"
+        },
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "2",
+          "name": "Vintage Camera 2",
+          "price": 2500,
+          "image": "/images/vintage camera 2.jpg",
+          "quantity": 3,
+          "id": "sKOtbLeBdjI"
+        },
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "1",
+          "name": "Vintage Camera",
+          "price": 2500,
+          "image": "/images/vintage camera 1.jpg",
+          "quantity": 1,
+          "id": "NC81KXgY-nI"
+        }
+      ],
+      "id": "0pmYZIfrN_k"
     }
   ],
   "cart": [
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "3",
+      "name": "Vintage Camera 3",
+      "price": 2500,
+      "image": "/images/vintage camer 3.jpg",
+      "quantity": 1,
+      "id": "NqNt-UKxegM"
+    },
     {
       "userid": "L7OI6yeAUbg",
       "productId": "8",
@@ -311,25 +195,7 @@
       "price": 2500,
       "image": "/images/midlaj.jpeg",
       "quantity": 1,
-      "id": "UdUovM_BtGE"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "2",
-      "name": "Vintage Camera 2",
-      "price": 2500,
-      "image": "/images/vintage camera 2.jpg",
-      "quantity": 3,
-      "id": "sKOtbLeBdjI"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "1",
-      "name": "Vintage Camera",
-      "price": 2500,
-      "image": "/images/vintage camera 1.jpg",
-      "quantity": 1,
-      "id": "NC81KXgY-nI"
+      "id": "wRp6Vd4smds"
     }
   ],
   "wishlist": [

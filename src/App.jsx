@@ -20,6 +20,8 @@ import Wishlist from './pages/wishlist'
 // import Cameracategory from './pages/cameracategory'
 import Categories from './pages/categories';
 import Categoryproducts from './pages/categoryproducts';
+import Orderhistory from './pages/orderhistory';
+import Profile from './pages/profile';
 
 function App() {
   
@@ -38,12 +40,14 @@ function App() {
   <Route path='/product/:id' element={<Productdetails />} />
   {/* <Route path='/categories/camera' element={<Cameracategory />} /> */}
   <Route path="/categories/:category" element={<Categoryproducts />} />
+  <Route path='/profile' element={<Profile />} />
 
   <Route element={<Protectedroute />}>
   <Route path='/wishlist' element={<Wishlist />} />
   <Route path='/cart' element={<Cart />} />
   <Route path='/checkout' element={<Checkout />} />
   <Route path='/ordersuccess' element={<Ordersuccess />} />
+  <Route path='/orders' element={<Orderhistory />} />
   </Route>
  </Routes>
 

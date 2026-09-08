@@ -1,4 +1,4 @@
-import { Heart, Search, ShoppingCart, User } from "lucide-react";
+import { Heart, Search, ShoppingCart, User,Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useNavigate,useSearchParams } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
@@ -59,10 +59,13 @@ function Navbar(){
                 <ShoppingCart size={21} />
             </button>
 
+            <button onClick={()=>navigation("/orders")}>
+                <Package size={21} />
+            </button>
+
              <button onClick={()=>{
                 if(userid){
-                    // navigation("/profile")
-                    alert("logged in")
+                    navigation("/profile")
                 }else{
                 navigation("/login")
                 }}}>

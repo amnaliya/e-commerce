@@ -9,6 +9,7 @@ import { toast} from "react-toastify";
 import { addcart } from "../services/cartservices";
 import { addtowishlist ,deleting} from "../services/wishlistservices";
 import { addwishlist,removefromwishlist } from "../redux/wishlistslice";
+import { Heart } from "lucide-react";
 
 
 
@@ -107,19 +108,15 @@ function Productdetails(){
         <img src={product.image} className="aspect-square w-full rounded-lg object-cover"/>
         <button
         onClick={handlewishlist}
-        className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-4 sm:top-4 sm:h-11 sm:w-1"
+        className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
     >
-        <span
-            className={`text-xl sm:text2xl${
-                wishlist.some(
-                    (item) => item.productId === product.id
-                )
-                    ? "text-red-500"
-                    : "text-gray-500"
-            }`}
-        >
-            ♥
-        </span>
+     <Heart
+    className={
+        wishlist.some((item) => item.productId === product.id)
+            ? "fill-red-500 text-red-500"
+            : "text-black"
+    }
+/>
     </button>
         </div>
 

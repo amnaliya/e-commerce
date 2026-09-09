@@ -7,6 +7,9 @@ import { useContext } from "react";
 import {addtocart,increasing,decreasing,removing} from "../redux/cartslice"
 import { useDispatch,useSelector } from "react-redux";
 import { addcart } from "../services/cartservices";
+import { Heart } from "lucide-react";
+import { removefromwishlist,addwishlist,setwishlist } from "../redux/wishlistslice";
+import { addtowishlist,deleting,getwishlist } from "../services/wishlistservices";
 
 
 
@@ -16,6 +19,7 @@ function Shop(){
     const search=searchParams.get("search") || ""
     const navigate=useNavigate();
     const cart = useSelector((state) => state.cart.items);
+    const wishlist = useSelector((state) => state.wishlist.items);
     const userid=useSelector((state)=>state.auth.userid)
     const dispatch=useDispatch();
     const[products,setproducts]=useState([])
@@ -71,6 +75,44 @@ const handleaddcart=async(product)=>{
     console.log(error);
     toast.warning("failed to add to cart")
   }
+}
+
+const handlewishlist=async(product)=>{
+    if(!userid){
+        toast.warning("please login first");
+        navigate("/login");
+        return;
+    }
+    const existing=wishlist.find((value)=>value.productId===product.id)
+    if(existing){
+        try{
+            await deleting(existing.id);
+            dispatch(removefromwishlist(product.id))
+            toast.info("removed from wishlist")
+            return;
+        }
+        catch(error){
+            console.log(error);
+            toast.error("failed to remove from wishlist")
+        }
+    }
+    const wishlistitem={
+        userid:userid,
+        productId:product.id,
+        name:product.name,
+        price:product.price,
+        image:product.image
+    }
+    try{
+        const response=await addtowishlist(wishlistitem)
+        dispatch(addwishlist(response));
+        toast.success("added to wishlist")
+    }
+    catch(error){
+        console.log(error);
+        toast.error("failed to add to wishlist")
+    }
+
 }
     return (
         <>
@@ -152,7 +194,16 @@ const handleaddcart=async(product)=>{
             <div key={value.id} className="overflow-hidden rounded-lg bg-white shadow-sm">
             <Link to={`/product/${value.id}`}  key={value.id}
             className="block">
+
+                <div className="relative">
                 <img src={value.image} alt={value.name} className="aspect-square w-full object-cover" />
+                 <button onClick={(e) => {e.preventDefault();e.stopPropagation();
+                handlewishlist(value);}}
+                className="absolute right-2 top-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-3 sm:top-3 sm:h-11 sm:w-11">
+            <Heart size={22} className={ wishlist.some((item) => item.productId === value.id)
+                        ? "fill-red-500 text-red-500": "text-black"}/>
+        </button>
+    </div>
                 <div className="sm:p-5 p-3">
                 <h2 className="sm:font-lg line-clamp-2 text-sm font-serif text-[#4A2C22]  ">{value.name}</h2>
                 <p className="font-semibold text-[#1F4D3A] sm:text-base sm:mt-2">₹{value.price}</p>

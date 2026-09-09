@@ -19,6 +19,7 @@ function Shop(){
     const userid=useSelector((state)=>state.auth.userid)
     const dispatch=useDispatch();
     const[products,setproducts]=useState([])
+    const[pricefilter,setpricefilter]=useState("all")
     
 
     useEffect(()=>{
@@ -36,8 +37,16 @@ catch(error){
 }
 }
 
-const filtering=products.filter((value)=>
-value.name.toLowerCase().includes(search.toLowerCase()))
+const filtering=products.filter((value)=>{
+    const matchsearch=value.name.toLowerCase().includes(search.toLowerCase());
+    const matchprice=
+    pricefilter==="all" ||
+    (pricefilter === "under1000" && value.price < 1000) ||
+    (pricefilter === "1000-1500" && value.price >= 1000 && value.price <= 1500) ||
+    (pricefilter === "1500-2000" && value.price > 1500 && value.price <= 2000) ||
+    (pricefilter === "above2000" && value.price > 2000);
+    return matchsearch && matchprice;
+})
 
 const handleaddcart=async(product)=>{
   if(!userid){
@@ -65,26 +74,94 @@ const handleaddcart=async(product)=>{
 }
     return (
         <>
-        <div>
-            <h1>SHOP</h1>
+        <div className="min-h-screen bg-[#f7f3eb] px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+        <p className="text-xs tracking-widest text-[#1F4D3A] sm:text-sm">
+          EXPLORE OUR COLLECTION
+        </p></div>
+            
+         <div className="mx-auto mt-3 max-w-5xl rounded-lg bg-white p-4 shadow-sm sm:p-5">
+
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+
+            <span className="mr-2 font-serif w-full font-semibold text-[#4A2C22] sm:w-auto">
+                Filter by Price:
+            </span>
+
+            <button
+                onClick={() => setpricefilter("all")}
+                className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
+                    pricefilter === "all"
+                        ? "bg-[#1F4D3A] text-white"
+                        : "border border-[#4A2C22] text-[#4A2C22]"}`}>
+                All
+            </button>
+
+            <button
+                onClick={() => setpricefilter("under1000")}
+                className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
+                    pricefilter === "under1000"
+                        ? "bg-[#1F4D3A] text-white"
+                        : "border border-[#4A2C22] text-[#4A2C22]"
+                }`}
+            >
+                Under ₹1000
+            </button>
+
+            <button
+                onClick={() => setpricefilter("1000-1500")}
+                className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
+                    pricefilter === "1000-1500"
+                        ? "bg-[#1F4D3A] text-white"
+                        : "border border-[#4A2C22] text-[#4A2C22]"
+                }`}
+            >
+                ₹1000 - ₹1500
+            </button>
+
+            <button
+                onClick={() => setpricefilter("1500-2000")}
+                className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
+                    pricefilter === "1500-2000"
+                        ? "bg-[#1F4D3A] text-white"
+                        : "border border-[#4A2C22] text-[#4A2C22]"
+                }`}
+            >
+                ₹1500 - ₹2000
+            </button>
+
+            <button
+                onClick={() => setpricefilter("above2000")}
+                className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
+                    pricefilter === "above2000"
+                        ? "bg-[#1F4D3A] text-white"
+                        : "border border-[#4A2C22] text-[#4A2C22]"
+                }`}
+            >
+                Above ₹2000
+            </button>
+
+        </div>
+
+            </div>
 
         
 
-            <div className="grid grid-cols-3 gap-6 p-8">
+            <div className="grid grid-cols-2 max-w-7xl gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 p-5">
         {filtering.map((value)=>(
             <div key={value.id} className="overflow-hidden rounded-lg bg-white shadow-sm">
             <Link to={`/product/${value.id}`}  key={value.id}
-            className="overflow-hidden rounded-lg bg-white shadow-sm">
-                <img src={value.image} alt={value.name} className="w-full h-72 object-cover" />
-                <div className="p-5">
-                <h2 className="font-lg font-serif text-[#4A2C22]  ">{value.name}</h2>
-                <p className="font-semibold text-[#1F4D3A] mt-2">₹{value.price}</p>
+            className="block">
+                <img src={value.image} alt={value.name} className="aspect-square w-full object-cover" />
+                <div className="sm:p-5 p-3">
+                <h2 className="sm:font-lg line-clamp-2 text-sm font-serif text-[#4A2C22]  ">{value.name}</h2>
+                <p className="font-semibold text-[#1F4D3A] sm:text-base sm:mt-2">₹{value.price}</p>
                 </div>
                 </Link>
 
-                 <div className="px-5 pb-5">
+                 <div className="px-3 pb-3 sm:px-5 sm:pb-5">
                 <button onClick={()=>handleaddcart(value)}
-             className="bg-[#1F4D3A] rounded-md mt-4 w-full text-white font-medium p-3">Add To Cart</button>
+             className="bg-[#1F4D3A] rounded-md  mt-2 sm:mt-4 w-full text-white font-medium px-2 py-2 text-xs sm:text-lg">Add To Cart</button>
              </div>
              </div>
         ))}

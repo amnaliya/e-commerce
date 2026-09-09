@@ -32,7 +32,7 @@ function Profile(){
     const handlelogout=()=>{
         localStorage.removeItem("userid");
         localStorage.removeItem("userrole");
-        dispatch(logout);
+        dispatch(logout());
         toast.info("logged out successfully");
         navigate("/login")
     }

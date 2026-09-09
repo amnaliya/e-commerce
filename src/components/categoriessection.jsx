@@ -10,25 +10,25 @@ import { Link } from "react-router-dom"
 function Categorysection(){
     return (
         <>
-        <div className="px-7 py-16 bg-[#f7f3eb]">
+        <div className="px-4 py-16 bg-[#f7f3eb] sm:px-7 sm:py-16">
             <div className="mx-auto max-w-7xl">
 
 
-                <div className="mb-10 text-center">
-                <p className="text-sm tracking-widest text-[#1F4D3A]">
+                <div className="mb-8 text-center sm:mb-10">
+                <p className="text-xs tracking-widest text-[#1F4D3A] sm:text-sm">
                 EXPLORE YESTERRA
                 </p>
-                <h2 className="font-serif  text-[#1F4D3A] mt-2 font-bold text-4xl ">
+                <h2 className="font-serif  text-[#1F4D3A] mt-2 font-bold text-4xl sm:text-4xl">
                 Shop By Category</h2>
                 </div>
 
 
-        <div className="grid grid-cols-5 gap-6 ">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-6 ">
 
-            <div className="rounded-lg bg-white text-center p-3 shadow-sm">
+            <div className="rounded-lg bg-white text-center p-3 shadow-sm sm:p-3">
             <div className="text-4xl">
                 <Link to="/categories/Cameras">
-                <img src={cameracover}  className="object-cover h-full" alt="vintage camera cover page" /> 
+                <img src={cameracover}  className="aspect-square w-full rounded-md object-cover" alt="vintage camera cover page" /> 
                 </Link>
             </div>
             <h3 className="mt-4  text-[#4A2C22] font-serif text-lg font-semibold">
@@ -39,7 +39,7 @@ function Categorysection(){
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
                 <Link to="/categories/Vinyl Records">
-                <img src={vinylrecord}className="h-full object-cover"  alt="vinyl records" />
+                <img src={vinylrecord}className="aspect-square w-full rounded-md object-cover"  alt="vinyl records" />
                 </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
@@ -50,7 +50,7 @@ function Categorysection(){
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
                 <Link to="/categories/Retro Posters">
-                <img src={retroposter} className="object-cover h-full" alt="retro posters" />
+                <img src={retroposter} className="aspect-square w-full rounded-md object-cover" alt="retro posters" />
                 </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
@@ -61,7 +61,7 @@ function Categorysection(){
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
                 <Link to="/categories/Accessories">
-                <img src={accessories} className="object-cover h-full" alt="accessories" />
+                <img src={accessories} className="aspect-square w-full rounded-md object-cover" alt="accessories" />
                 </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
@@ -72,7 +72,7 @@ function Categorysection(){
             <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
                 <Link to="/categories/Collectibles">
-                <img src={collectibles} className="object-cover h-full" alt="retro posters" />
+                <img src={collectibles} className="aspect-square w-full rounded-md object-cover" alt="retro posters" />
                 </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">

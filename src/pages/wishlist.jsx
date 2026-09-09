@@ -36,9 +36,9 @@ function wishlist(){
 
     return (
         <>
-        <div className="min-h-screen bg-[#f7f3eb] px-5 py-10">
+        <div className="min-h-screen bg-[#f7f3eb] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
             <div className="mx-auto max-w-6xl">
-                <h1 className="text-center mb-8 font-bold text-[#4A2C22] font-serif text-3xl">
+                <h1 className="text-center mb-8 font-bold text-[#4A2C22] font-serif text-3xl sm:text-4xl">
                     My Wishlist
                 </h1>
 
@@ -46,20 +46,20 @@ function wishlist(){
                 <div>
                 {wishlist.length===0 ?(
 
-                <div className="rounded-xl bg-white p-10 text-center shadow-sm">
-                    <p className="text-2xl text-gray-800">Your Wishlist is Empty</p>
+                <div className="rounded-xl bg-white p-8 text-center shadow-sm sm:p-10">
+                    <p className=" text-xl sm:text-2xl text-gray-800">Your Wishlist is Empty</p>
                 </div>
                 ):(
-                    <div className="grid gap-5 grid-cols-3">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
                         {wishlist.map((value)=>(
                             <div key={value.id} className="overflow-hidden rounded-xl bg-white shadow-sm">
 
-                                <img src={value.image} className="h-80 w-full object-cover" />
+                                <img src={value.image} className="aspect-square w-full object-cover" />
 
-                                <div className="p-5">
-                                <h2 className="text-[#4A2C22] font-serif text-2xl font-bold">{value.name}</h2>
+                                <div className="p-4 sm:p-5">
+                                <h2 className="text-[#4A2C22] font-serif text-2xl  line-clamp-2 sm:text-2xl font-bold">{value.name}</h2>
                                 <p className="mt-2  text-[#1F4D3A] font-semibold text-lg">{value.price}</p>
-                                <button className="mt-4 w-full rounded-md bg-red-500 px-4 py-3 font-medium text-white"
+                                <button className="mt-4 w-full rounded-md bg-red-500 px-3 py-2 font-medium text-white sm:px-4 sm:py-3 sm:text-base"
                                 onClick={()=>handleremove(value.id,value.productId)}>
                                  Remove from Wishlist
                                 </button>

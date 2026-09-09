@@ -8,18 +8,17 @@ function Home(){
     return(
         <>
          <div className="relative w-full overflow-hidden">
-             <img src={yesterabanner} className="h-[580px]  block w-full object-cover" alt="YESTERA-IMAGE" />
+             <img src={yesterabanner} className=" block h-auto w-full" alt="YESTERA-IMAGE" />
 
-        {/* <img src="/frontpage.png" alt="Crochettella" className="w-full h-auto block"/> */}
         <Link to="/shop"
-        className="absolute bottom-[5%] left-[25%] -translate-x-1/2 
-        bg-[#6B4632] text-white px-8 py-3 mb-5 rounded-full 
-        hover:bg-[#5A4030] transition whitespace-nowrap">SHOP NOW →</Link>
+        className="absolute bottom-[8%] left-1/2 -translate-x-1/2 
+        bg-[#6B4632] text-white text-sm px-8 py-2.5 mb-5 rounded-full 
+         transition hover:bg-[#5A4030] whitespace-nowrap sm:px-8 sm:py-3 sm:text-base">SHOP NOW →</Link>
          </div>     
          {/* <h1 className="text-5xl font-bold text-center">HOME</h1> */}
         
          <Categorysection />
-         <Featuredpicks />
+         {/* <Featuredpicks /> */}
          </>
     )
 }

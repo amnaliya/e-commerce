@@ -23,8 +23,8 @@ function Orderhistory(){
  }
  return (
     <>
-    <div className="min-h-screen bg-[#f7f3eb] px-7 py-10">
-        <h1 className="font-bold text-2xl  font-serif text-[#4A2C22] mb-10 text-center">My Orders</h1>
+    <div className="min-h-screen bg-[#f7f3eb] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <h1 className="font-bold p-6  text-3xl sm:mb-10 sm:text-4xl font-serif text-[#4A2C22] sm:p-10 shadow-lg mb-10 text-center">My Orders</h1>
         {orders.length===0? (
             <div className="mx-auto max-w-4xl rounded-xl bg-white p-10 text-center shadow-sm">
                 <p className="text-xl text-gray-500">You Haven't placed any orders yet </p>

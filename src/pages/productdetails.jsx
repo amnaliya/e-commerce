@@ -99,18 +99,18 @@ function Productdetails(){
     }
     return (
         <>
-        <div className="min-h-screen bg-[#f7f3eb]  px-8 py-12">
-            <div className="rounded-xl max-w-6xl bg-white shadow-sm p-8 grid grid-cols-2 gap-10 mx-auto">
+        <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+            <div className="rounded-xl max-w-6xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
 
         
         <div className="relative">
-        <img src={product.image} className="h-[420px]  w-[500px] rounded-lg object-cover"/>
+        <img src={product.image} className="aspect-square w-full rounded-lg object-cover"/>
         <button
         onClick={handlewishlist}
-        className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110"
+        className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-4 sm:top-4 sm:h-11 sm:w-1"
     >
         <span
-            className={`text-2xl ${
+            className={`text-xl sm:text2xl${
                 wishlist.some(
                     (item) => item.productId === product.id
                 )
@@ -123,11 +123,11 @@ function Productdetails(){
     </button>
         </div>
 
-        <div  className="self-start pt-4 flex flex-col items-start gap-6">
-            <h1 className="font-bold text-sm text-2xl text-gray-500">YESTERA COLLECTION</h1>
-            <h1 className=" mt-4 font-serif text-5xl text-[#4A2C22]">{product.name}</h1>
-            <p className="mt-4 font-semibold text-[#1F4D3A] text-2xl">₹{product.price}</p>
-            <p className="mt-6 text-gray-700 text-md text-xl">{product.description}</p>
+        <div  className="flex flex-col items-start gap-4 pt-2 sm:gap-5 sm:pt-4">
+            <h1 className="font-bold  text-xs sm:text-sm text-2xl text-gray-500">YESTERA COLLECTION</h1>
+            <h1 className=" mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl text-[#4A2C22]">{product.name}</h1>
+            <p className="mt-4 font-semibold text-[#1F4D3A] text-xl sm:text-2xl">₹{product.price}</p>
+            <p className="mt-6 text-gray-700 text-base leading-7 sm:text-lg  text-xl">{product.description}</p>
              <button onClick={async(e)=>{
                 e.preventDefault()
                 if(!userid){
@@ -164,7 +164,7 @@ function Productdetails(){
                 }
             
            }}
-             className="bg-[#1F4D3A] rounded-lg mt-4 w-full text-white font-medium p-5">Add To Cart</button>
+             className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5">Add To Cart</button>
 
         </div>
         </div>

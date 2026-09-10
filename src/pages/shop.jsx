@@ -14,7 +14,6 @@ import { addtowishlist,deleting,getwishlist } from "../services/wishlistservices
 
 
 function Shop(){
-    // const{addtocart}=useContext(Cartcontext)
     const[searchParams]=useSearchParams();
     const search=searchParams.get("search") || ""
     const navigate=useNavigate();
@@ -24,11 +23,11 @@ function Shop(){
     const dispatch=useDispatch();
     const[products,setproducts]=useState([])
     const[pricefilter,setpricefilter]=useState("all")
+    const[sorting,setsorting]=useState("all")
     
 
     useEffect(()=>{
-    fetchproducts()
-    },[]);
+    fetchproducts()},[]);
 
     const fetchproducts=async()=>{
     try{
@@ -38,8 +37,21 @@ function Shop(){
 catch(error){
   console.log(error);
   
-}
-}
+}}
+useEffect(() => {
+    if (userid) {
+        fetchwishlist();
+    }
+}, [userid]);
+
+const fetchwishlist = async () => {
+    try {
+        const data = await getwishlist(userid);
+        dispatch(setwishlist(data));
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 const filtering=products.filter((value)=>{
     const matchsearch=value.name.toLowerCase().includes(search.toLowerCase());
@@ -50,6 +62,16 @@ const filtering=products.filter((value)=>{
     (pricefilter === "1500-2000" && value.price > 1500 && value.price <= 2000) ||
     (pricefilter === "above2000" && value.price > 2000);
     return matchsearch && matchprice;
+})
+
+const sorted=filtering.sort((a,b)=>{
+    if(sorting==="low"){
+        return a.price - b.price
+    }
+    if(sorting==="high"){
+        return b.price - a.price
+    }
+    return 0;
 })
 
 const handleaddcart=async(product)=>{
@@ -129,6 +151,12 @@ const handlewishlist=async(product)=>{
             <span className="mr-2 font-serif w-full font-semibold text-[#4A2C22] sm:w-auto">
                 Filter by Price:
             </span>
+        <select value={sorting} onChange={(e) => setsorting(e.target.value)}
+            className="rounded-md border border-[#4A2C22] px-4 py-2 text-sm text-[#4A2C22]">
+            <option value="all">Sort by Price</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
 
             <button
                 onClick={() => setpricefilter("all")}
@@ -145,17 +173,15 @@ const handlewishlist=async(product)=>{
                     pricefilter === "under1000"
                         ? "bg-[#1F4D3A] text-white"
                         : "border border-[#4A2C22] text-[#4A2C22]"
-                }`}
-            >
+                }`} >
                 Under ₹1000
             </button>
 
             <button
                 onClick={() => setpricefilter("1000-1500")}
                 className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
-                    pricefilter === "1000-1500"
-                        ? "bg-[#1F4D3A] text-white"
-                        : "border border-[#4A2C22] text-[#4A2C22]"
+                    pricefilter === "1000-1500"? "bg-[#1F4D3A] text-white"
+                    : "border border-[#4A2C22] text-[#4A2C22]"
                 }`}
             >
                 ₹1000 - ₹1500
@@ -166,7 +192,7 @@ const handlewishlist=async(product)=>{
                 className={`rounded-md px-4 py-2 text-sm transition sm:px-4 ${
                     pricefilter === "1500-2000"
                         ? "bg-[#1F4D3A] text-white"
-                        : "border border-[#4A2C22] text-[#4A2C22]"
+                        : "border border-[#4A2C22] text-[#4A2C22]" 
                 }`}
             >
                 ₹1500 - ₹2000
@@ -186,6 +212,7 @@ const handlewishlist=async(product)=>{
         </div>
 
             </div>
+
 
         
 

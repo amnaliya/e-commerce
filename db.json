@@ -210,19 +210,55 @@
         }
       ],
       "id": "ZXibwbBopNI"
-    }
-  ],
-  "cart": [
+    },
     {
       "userid": "L7OI6yeAUbg",
-      "productId": "3",
-      "name": "Vintage Camera 3",
-      "price": 2500,
-      "image": "/images/vintage camer 3.jpg",
-      "quantity": 1,
-      "id": "avkShqAQZB8"
+      "name": "fezin ",
+      "email": "amnaah207@gmail.coma",
+      "address": "sVFb",
+      "city": "bfvaba",
+      "pincode": "111123",
+      "number": "07907582151",
+      "total": 5000,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "3",
+          "name": "Vintage Camera 3",
+          "price": 2500,
+          "image": "/images/vintage camer 3.jpg",
+          "quantity": 2,
+          "id": "avkShqAQZB8"
+        }
+      ],
+      "paymentmethod": "card",
+      "id": "BJmedblE_Iw"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "fezin ",
+      "email": "amnaah207@gmail.coma",
+      "address": "sVFb",
+      "city": "bfvaba",
+      "pincode": "111123",
+      "number": "07907582151",
+      "total": 2500,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "10",
+          "name": "Vintage mirror 1",
+          "price": 2500,
+          "image": "/images/vintage mirror 1.jpg",
+          "quantity": 1,
+          "id": "5MGRlm28m_Y"
+        }
+      ],
+      "paymentmethod": "card",
+      "id": "zlbpfM-fHNM"
     }
   ],
+  "cart": [],
   "wishlist": [
     {
       "userid": "L7OI6yeAUbg",
@@ -239,6 +275,14 @@
       "price": 1500,
       "image": "/images/midlaj.jpeg",
       "id": "tE0ZYAtWdtQ"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "10",
+      "name": "Vintage mirror 1",
+      "price": 2500,
+      "image": "/images/vintage mirror 1.jpg",
+      "id": "4wrBN0yoErI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

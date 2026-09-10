@@ -14,16 +14,25 @@ function Checkout(){
     const[city,setcity]=useState("")
     const[pincode,setpincode]=useState("")
     const[number,setnumber]=useState("")
+    const[paymentmethod,setpaymentmethod]=useState("cod")
+    const[load,setload]=useState("")
 
     const dispatch=useDispatch();
     const cart=useSelector((state)=>state.cart.items)
     const userid=useSelector((state)=>state.auth.userid)
-
     const navigate=useNavigate();
 // const {cart,clearcart}=useContext(Cartcontext)
 const total=cart.reduce((total,product)=>{
     return total + product.price * product.quantity
 },0)
+
+async function handlecheck(){
+    if(total===0){
+        toast.error("you want to order something")
+        navigate("/shop");
+        return;
+    }
+}
 
 async function handleorder(){
     if(!name ||!email||!address ||!city ||!pincode ||!number){
@@ -31,7 +40,7 @@ async function handleorder(){
     return;}
 
     const order={
-        userid,name,email,address,city,pincode,number,total,items:cart
+        userid,name,email,address,city,pincode,number,total,items:cart,paymentmethod
     };
     try{
     const response=await axios.post("http://localhost:3000/orders",
@@ -95,6 +104,64 @@ return (
                     
                     
                 </form>
+                <div className="mt-6">
+    <h2 className="mb-4 text-xl font-bold text-[#5c4033] sm:text-2xl">
+        Payment Method
+    </h2>
+
+    <div className="space-y-3">
+
+        <label className="flex cursor-pointer items-center gap-3 rounded-md border border-gray-300 p-4">
+            <input type="radio" name="payment" value="cod"
+            checked={paymentmethod === "cod"}
+            onChange={(e)=>setpaymentmethod(e.target.value)}
+            />
+
+            <div>
+                <p className="font-semibold text-[#5c4033]">
+                    Cash on Delivery
+                </p>
+                <p className="text-sm text-gray-500">
+                    Pay when your order arrives
+                </p>
+            </div>
+        </label>
+
+
+        <label className="flex cursor-pointer items-center gap-3 rounded-md border border-gray-300 p-4">
+            <input type="radio" name="payment" value="card"
+                checked={paymentmethod === "card"}
+                onChange={(e)=>setpaymentmethod(e.target.value)} />
+
+            <div>
+                <p className="font-semibold text-[#5c4033]">
+                    Credit / Debit Card
+                </p>
+                <p className="text-sm text-gray-500">
+                    Pay securely using your card
+                </p>
+            </div>
+        </label>
+
+
+        <label className="flex cursor-pointer items-center gap-3 rounded-md border border-gray-300 p-4">
+            <input type="radio" name="payment" value="upi"
+                checked={paymentmethod === "upi"}
+                onChange={(e)=>setpaymentmethod(e.target.value)}
+            />
+
+            <div>
+                <p className="font-semibold text-[#5c4033]">
+                    UPI
+                </p>
+                <p className="text-sm text-gray-500">
+                    Pay using UPI
+                </p>
+            </div>
+        </label>
+
+    </div>
+</div>
                 </div>
                 </div>
             

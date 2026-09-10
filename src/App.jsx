@@ -22,6 +22,7 @@ import Categories from './pages/categories';
 import Categoryproducts from './pages/categoryproducts';
 import Orderhistory from './pages/orderhistory';
 import Profile from './pages/profile';
+import Layout from './components/layout';
 
 function App() {
   
@@ -29,14 +30,16 @@ function App() {
     <>
       
         <BrowserRouter>
-  <Navbar />
- <Routes>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+           <Route element={<Layout />}>
+          {/* <Navbar /> */}
+ 
   <Route path='/' element={<Home />} />
   <Route path='/shop' element={<Shop />} />
   <Route path='/categories' element={<Categories />} />
   <Route path='/about' element={<Aboutus />} />
-  <Route path="/register" element={<Register />} />
-  <Route path="/login" element={<Login />} />
   <Route path='/product/:id' element={<Productdetails />} />
   {/* <Route path='/categories/camera' element={<Cameracategory />} /> */}
   <Route path="/categories/:category" element={<Categoryproducts />} />
@@ -49,9 +52,10 @@ function App() {
   <Route path='/ordersuccess' element={<Ordersuccess />} />
   <Route path='/orders' element={<Orderhistory />} />
   </Route>
+  </Route>
  </Routes>
 
- <Footer />
+ {/* <Footer /> */}
  <ToastContainer />
  </BrowserRouter>
     </>

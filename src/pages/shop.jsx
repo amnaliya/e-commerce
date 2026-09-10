@@ -152,7 +152,7 @@ const handlewishlist=async(product)=>{
                 Filter by Price:
             </span>
         <select value={sorting} onChange={(e) => setsorting(e.target.value)}
-            className="rounded-md border border-[#4A2C22] px-4 py-2 text-sm text-[#4A2C22]">
+            className="rounded-md border border-[#4A2C22] px-4 py-2 pr-3 mr-2 text-sm text-[#4A2C22]">
             <option value="all">Sort by Price</option>
             <option value="low">Price: Low to High</option>
             <option value="high">Price: High to Low</option>

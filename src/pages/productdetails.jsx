@@ -101,7 +101,7 @@ function Productdetails(){
     return (
         <>
         <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-            <div className="rounded-xl max-w-6xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
+            <div className="rounded-xl max-w-5xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
 
         
         <div className="relative">

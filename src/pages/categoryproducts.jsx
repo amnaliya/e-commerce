@@ -32,6 +32,8 @@ function Categoryproducts(){
         }
     }
 
+    
+
     const handleaddtocart=async(product)=>{
         if(!userid){
             toast.warning("please login first");
@@ -95,7 +97,7 @@ function Categoryproducts(){
                 <h1 className="text-center font-serif mb-10 text-[#1F4D3A] font-bold text-4xl">
                     {category}</h1>
 
-                    <div className="p-5 grid grid-cols-3 gap-6">
+                    <div className="p-5 grid grid-cols-4 gap-6">
                         
                         {product.map((value)=>(
                             <div key={value.id}

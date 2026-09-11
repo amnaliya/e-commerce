@@ -5,6 +5,7 @@ import retroposter from "../assets/posters.png"
 import accessories from "../assets/accessories cover.png"
 import collectibles from "../assets/collectibles cover.png"
 import { Link } from "react-router-dom"
+import { ArrowRight } from "lucide-react"
 function Categories(){
     return (
         <>
@@ -32,6 +33,12 @@ function Categories(){
             <h3 className="mt-4  text-[#4A2C22] font-serif text-lg font-semibold">
             Vintage Camera
             </h3>
+            <Link to="/categories/Cameras"
+            className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-[#1F4D3A] group">
+            Explore Collection
+        <ArrowRight size={17}
+        className="transition-transform duration-300 group-hover:translate-x-1"/>
+        </Link>
             </div>
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
@@ -43,17 +50,29 @@ function Categories(){
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Vinyl Records
             </h3>
+             <Link to="/categories/Cameras"
+            className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-[#1F4D3A] group">
+            Explore Collection
+        <ArrowRight size={17}
+        className="transition-transform duration-300 group-hover:translate-x-1"/>
+        </Link>
             </div>
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
             <div className="text-4xl">
-                <Link to="/categories/Retro Posters" className="block overflow-hidden rounded-lg">
+                <Link to="/categories/Retro Poster" className="block overflow-hidden rounded-lg">
                 <img src={retroposter} className="object-cover h-full" alt="retro posters" />
                 </Link>
             </div>
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Retro Posters
             </h3>
+             <Link to="/categories/Cameras"
+            className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-[#1F4D3A] group">
+            Explore Collection
+        <ArrowRight size={17}
+        className="transition-transform duration-300 group-hover:translate-x-1"/>
+        </Link>
             </div>
 
               <div className="rounded-lg bg-white text-center p-3 shadow-sm">
@@ -65,6 +84,12 @@ function Categories(){
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Accessories
             </h3>
+             <Link to="/categories/Cameras"
+            className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-[#1F4D3A] group">
+            Explore Collection
+        <ArrowRight size={17}
+        className="transition-transform duration-300 group-hover:translate-x-1"/>
+        </Link>
             </div>
 
             <div className="rounded-lg bg-white text-center p-3 shadow-sm">
@@ -76,6 +101,12 @@ function Categories(){
             <h3 className="mt-4 text-[#4A2C22] font-serif text-lg font-semibold">
             Collectibles
             </h3>
+             <Link to="/categories/Cameras"
+            className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-[#1F4D3A] group">
+            Explore Collection
+        <ArrowRight size={17}
+        className="transition-transform duration-300 group-hover:translate-x-1"/>
+        </Link>
             </div>
 
 

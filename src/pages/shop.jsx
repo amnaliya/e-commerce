@@ -217,7 +217,7 @@ const handlewishlist=async(product)=>{
         
 
             <div className="grid grid-cols-2 max-w-7xl gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 p-5">
-        {filtering.map((value)=>(
+        {sorted.length>0 ? (sorted.map((value)=>(
             <div key={value.id} className="overflow-hidden rounded-lg bg-white shadow-sm">
             <Link to={`/product/${value.id}`}  key={value.id}
             className="block">
@@ -242,7 +242,27 @@ const handlewishlist=async(product)=>{
              className="bg-[#1F4D3A] rounded-md  mt-2 sm:mt-4 w-full text-white font-medium px-2 py-2 text-xs sm:text-lg">Add To Cart</button>
              </div>
              </div>
-        ))}
+        ))
+    ):(
+         <div className="col-span-full flex min-h-[300px] flex-col items-center justify-center text-center">
+
+            <h2 className="font-serif text-2xl font-semibold text-[#4A2C22]">
+                No matches found
+            </h2>
+
+            <p className="mt-2 text-sm text-stone-500">
+                Try searching for a different product.
+            </p>
+
+            <button
+                onClick={() => navigate("/shop")}
+                className="mt-5 rounded-md bg-[#1F4D3A] px-6 py-2 text-sm text-white transition hover:bg-[#163b2d]"
+            >
+                View All Products
+            </button>
+
+        </div>
+    )}
             </div>
         </div>
         </>

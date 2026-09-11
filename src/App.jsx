@@ -23,6 +23,8 @@ import Categoryproducts from './pages/categoryproducts';
 import Orderhistory from './pages/orderhistory';
 import Profile from './pages/profile';
 import Layout from './components/layout';
+import Notfound from './pages/notfound';
+import Protection from './routes/protecton';
 
 function App() {
   
@@ -31,8 +33,11 @@ function App() {
       
         <BrowserRouter>
         <Routes>
+          <Route element={<Protection />}>
+          <Route path='*' element={<Notfound />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          </Route>
            <Route element={<Layout />}>
           {/* <Navbar /> */}
  

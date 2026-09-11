@@ -35,7 +35,7 @@ function Navbar(){
 
     return (
         <>
-        <nav className="border-b border-stone-200 bg-[#f7f3eb]">
+        <nav className="border-b border-stone-200 bg-[#f7f3eb] sticky top-0 z-50">
             <div className="flex items-center justify-between mx-auto py-2 px-4 max-w-7xl">
             <Link to='/' className="flex flex-col">
             <h1 className="text-2xl font-bold text-[#1F4D3A] font-serif sm:text-3xl">YESTERA</h1>

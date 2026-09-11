@@ -37,7 +37,7 @@ function wishlist(){
     return (
         <>
         <div className="min-h-screen bg-[#f7f3eb] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-            <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-5xl">
                 <h1 className="text-center mb-8 font-bold text-[#4A2C22] font-serif text-3xl sm:text-4xl">
                     My Wishlist
                 </h1>
@@ -47,10 +47,10 @@ function wishlist(){
                 {wishlist.length===0 ?(
 
                 <div className="rounded-xl bg-white p-8 text-center shadow-sm sm:p-10">
-                    <p className=" text-xl sm:text-2xl text-gray-800">Your Wishlist is Empty</p>
+                    <p className=" text-xl sm:text-5xl text-gray-800">Your Wishlist is Empty</p>
                 </div>
                 ):(
-                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
                         {wishlist.map((value)=>(
                             <div key={value.id} className="overflow-hidden rounded-xl bg-white shadow-sm">
 

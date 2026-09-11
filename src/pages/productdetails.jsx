@@ -98,6 +98,28 @@ function Productdetails(){
             console.log(error)
         }
     }
+    const handlebuynow=async ()=>{
+        if(!userid){
+            toast.warning("please login first")
+            navigate("/login")
+            return;
+        }
+        try{
+       const cartItem = {
+      userid: userid,
+      productId: product.id,
+      quantity: 1,
+      price:product.price,
+      image:product.image
+        }
+        await addcart(cartItem);
+        dispatch(addtocart(cartItem));
+        navigate("/checkout");
+       }catch(error){
+            toast.error("something went wrong")
+            console.log(error);
+            
+       }}
     return (
         <>
         <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
@@ -162,6 +184,8 @@ function Productdetails(){
             
            }}
              className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5">Add To Cart</button>
+             <button  className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5"
+              onClick={()=>handlebuynow()}>Buy Now</button>
 
         </div>
         </div>

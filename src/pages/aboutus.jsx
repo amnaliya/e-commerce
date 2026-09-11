@@ -153,19 +153,19 @@ function Aboutus(){
 
                 </section>
 
-                <section className="bg-[#4A2C22] px-5 py-14 text-center sm:px-8">
+                <section className="border border-[#D8DFD2] px-5 py-14 text-center sm:px-8">
 
-                    <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+                    <h2 className="font-serif text-3xl font-bold text-[#1F4D3A] sm:text-4xl">
                         Find Something With a Story
                     </h2>
 
-                    <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-[#eadfd4] sm:text-base">
+                    <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-[#4A2C22] sm:text-base">
                         Explore our collection and discover a piece from
                         another era waiting to become part of yours.
                     </p>
 
                      <Link to="/shop"
-                        className="mt-7 inline-block rounded-full bg-[#f7f3eb] px-7 py-3 font-semibold text-[#4A2C22] transition hover:bg-[#e8dccb]"
+                        className="mt-7 inline-block bg-[#f7f3eb] rounded-full bg-[#f7f3eb] px-7 py-3 font-semibold text-[#4A2C22] transition hover:bg-[#e8dccb]"
                     >
                         Explore Collection →
                     </Link>

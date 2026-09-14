@@ -3,7 +3,7 @@
     {
       "id": "4",
       "name": "Vintage Camera 4",
-      "price": 2500,
+      "price": 1300,
       "category": "Cameras",
       "image": "/images/vintage camera 4.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
@@ -19,7 +19,7 @@
     {
       "id": "47",
       "name": "Vintage Flowers 2",
-      "price": 2500,
+      "price": 500,
       "category": "Collectibles",
       "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -27,7 +27,7 @@
     {
       "id": "14",
       "name": "Vintage phone",
-      "price": 2500,
+      "price": 1650,
       "category": "Accessories",
       "image": "/images/vintage phone 2.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -35,7 +35,7 @@
     {
       "id": "12",
       "name": "Vintage Lamp",
-      "price": 2500,
+      "price": 1500,
       "category": "Accessories",
       "image": "/images/vintage lamp 1.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -59,7 +59,7 @@
     {
       "id": "46",
       "name": "Vintage Flowers",
-      "price": 2500,
+      "price": 1350,
       "category": "Collectibles",
       "image": "https://i.pinimg.com/736x/3f/49/8d/3f498d0af6721dfaac8a1a42e3a663c9.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -67,7 +67,7 @@
     {
       "id": "9",
       "name": "Vintage clock",
-      "price": 2500,
+      "price": 1499,
       "category": "Accessories",
       "image": "/images/vintage clock 1.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -83,7 +83,7 @@
     {
       "id": "39",
       "name": "Vinyl record 6",
-      "price": 2500,
+      "price": 3000,
       "category": "Vinyl Records",
       "image": "/images/vinyl record 6.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -99,7 +99,7 @@
     {
       "id": "13",
       "name": "Vintage mirror 3",
-      "price": 2500,
+      "price": 1130,
       "category": "Collectibles",
       "image": "/images/vintage mirror 3.jpg",
       "description": "A beautiful vintage clock for collectors."
@@ -115,7 +115,7 @@
     {
       "id": "5",
       "name": "Vintage record 1",
-      "price": 2500,
+      "price": 1750,
       "category": "Vinyl Records",
       "image": "/images/vinyl records 1.jpg",
       "description": "A beautiful vinyl record for collectors."
@@ -413,7 +413,14 @@
       "name": "Afla amj",
       "email": "aflaamj@gmail.com",
       "password": "afla",
-      "id": "FM6MF6qDAeU"
+      "id": "FM6MF6qDAeU",
+      "role": "user"
+    },
+    {
+      "name": "new",
+      "email": "andc@gmail.com",
+      "password": "nnnn",
+      "id": "0I0hnoFbG6c"
     }
   ],
   "orders": [
@@ -688,34 +695,77 @@
       ],
       "paymentmethod": "cod",
       "id": "B0cuji-5Vv0"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "thahir",
+      "email": "vpthahir@gmail.com",
+      "address": "kldasfl",
+      "city": "kodinhi",
+      "pincode": "2222",
+      "number": "222",
+      "total": 2500,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "21",
+          "quantity": 1,
+          "price": 2500,
+          "image": "/images/vintage watch 1.jpg"
+        }
+      ],
+      "paymentmethod": "upi",
+      "id": "Wy0IxFe7kVA"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "47",
+      "name": "Vintage Flowers 2",
+      "price": 500,
+      "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
+      "quantity": 1,
+      "id": "CH493mlRsxM"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "14",
+      "name": "Vintage phone",
+      "price": 1650,
+      "image": "/images/vintage phone 2.jpg",
+      "quantity": 2,
+      "id": "4ADFbR4fIiM"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "6",
+      "name": "Vintage Record 2",
+      "price": 2500,
+      "image": "/images/vinyl records 2.jpg",
+      "quantity": 1,
+      "id": "qhBPiQdTRyg"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "46",
+      "name": "Vintage Flowers",
+      "price": 1350,
+      "image": "https://i.pinimg.com/736x/3f/49/8d/3f498d0af6721dfaac8a1a42e3a663c9.jpg",
+      "quantity": 1,
+      "id": "YlZZNLryrsA"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "39",
+      "name": "Vinyl record 6",
+      "price": 3000,
+      "image": "/images/vinyl record 6.jpg",
+      "quantity": 1,
+      "id": "UBdKph3tMXo"
+    }
+  ],
   "wishlist": [
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "1",
-      "name": "Vintage Camera",
-      "price": 2500,
-      "image": "/images/vintage camera 1.jpg",
-      "id": "R7KG0ZkJ-sI"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "8",
-      "name": "Vintage record 4",
-      "price": 1500,
-      "image": "/images/midlaj.jpeg",
-      "id": "tE0ZYAtWdtQ"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "10",
-      "name": "Vintage mirror 1",
-      "price": 2500,
-      "image": "/images/vintage mirror 1.jpg",
-      "id": "4wrBN0yoErI"
-    },
     {
       "userid": "FM6MF6qDAeU",
       "productId": "4",
@@ -725,20 +775,52 @@
       "id": "rThVDCSNl2E"
     },
     {
-      "userid": "L7OI6yeAUbg",
-      "productId": "16",
-      "name": "Vinyl record 5",
-      "price": 2500,
-      "image": "/images/vinyl record 5.jpg",
-      "id": "Eh6ApGkhACM"
-    },
-    {
       "userid": "FM6MF6qDAeU",
       "productId": "38",
       "name": "Vintage phone 4",
       "price": 2500,
       "image": "/images/vintage phone 4.jpg",
       "id": "4t6-c7az9DA"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "16",
+      "name": "Vinyl record 5",
+      "price": 2500,
+      "image": "/images/vinyl record 5.jpg",
+      "id": "m9wJ1LQdTJs"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "4",
+      "name": "Vintage Camera 4",
+      "price": 1300,
+      "image": "/images/vintage camera 4.jpg",
+      "id": "rxGAA8umOQ4"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "12",
+      "name": "Vintage Lamp",
+      "price": 1500,
+      "image": "/images/vintage lamp 1.jpg",
+      "id": "mjc-XrXMMbA"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "1",
+      "name": "Vintage Camera",
+      "price": 2500,
+      "image": "/images/vintage camera 1.jpg",
+      "id": "XJwHanFIJjY"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "39",
+      "name": "Vinyl record 6",
+      "price": 3000,
+      "image": "/images/vinyl record 6.jpg",
+      "id": "HQWCB70Ci9k"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

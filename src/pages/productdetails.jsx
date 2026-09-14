@@ -1,197 +1,239 @@
-
-import { useParams } from "react-router-dom"
-import { useState,useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { addtocart} from "../redux/cartslice";
-import { useSelector,useDispatch } from "react-redux";
+import { addtocart } from "../redux/cartslice";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast} from "react-toastify";
+import { toast } from "react-toastify";
 import { addcart } from "../services/cartservices";
-import { addtowishlist ,deleting} from "../services/wishlistservices";
-import { addwishlist,removefromwishlist } from "../redux/wishlistslice";
+import { addtowishlist, deleting } from "../services/wishlistservices";
+import { addwishlist, removefromwishlist } from "../redux/wishlistslice";
 import { Heart } from "lucide-react";
 
+function Productdetails() {
+  console.log("PRODUCT DETAILS RENDERED");
+  const dispatch = useDispatch();
+  // const cart=useSelector((state)=>state.cart.items)
+  const userid = useSelector((state) => state.auth.userid);
+  const wishlist = useSelector((state) => state.wishlist.items);
+  const navigate = useNavigate();
 
+  const [product, setproduct] = useState("");
+  const [similarproducts, setsimilarproducts] = useState([]);
+  const { id } = useParams();
 
+  useEffect(() => {
+    fetchproducts();
+  }, [id]);
 
-function Productdetails(){
-        console.log("PRODUCT DETAILS RENDERED");
-    const dispatch=useDispatch();
-    // const cart=useSelector((state)=>state.cart.items)
-    const userid=useSelector((state)=>state.auth.userid);
-    const wishlist=useSelector((state)=>state.wishlist.items)
-    const navigate=useNavigate();
-   
-    const[product,setproduct]=useState("");
-    const {id}=useParams();
+  const fetchproducts = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/products/${id}`);
+      setproduct(response.data);
+      const similarresponse = await axios.get(
+        `http://localhost:3000/products?category=${response.data.category}`,
+      );
 
-    useEffect(()=>{
-        console.log("FETCHING PRODUCT");
+      const filteredProducts = similarresponse.data.filter(
+        (item) => item.id !== response.data.id,
+      );
 
-        fetchproducts();
-
-    },[id])
-
-    const fetchproducts=async()=>{
-        try{
-            const response=await axios.get(`http://localhost:3000/products/${id}`)
-            setproduct(response.data)
-        }
-        catch(error){
-            console.log(error)
-        }
+      setsimilarproducts(filteredProducts);
+    } catch (error) {
+      console.log(error);
     }
-    if(!product){
-        return <h1>loading</h1>
+  };
+  if (!product) {
+    return <h1>loading</h1>;
+  }
+
+  const handlewishlist = async () => {
+    if (!userid) {
+      toast.warning("please login first");
+      navigate("/login");
+      return;
     }
+    const existing = wishlist.find((value) => value.productId === product.id);
 
-    const handlewishlist=async()=>{
-        if(!userid){
-            toast.warning("please login first")
-            navigate("/login")
-            return;
-        }
-        const existing=wishlist.find((value)=>
-        value.productId===product.id)
-
-        if(existing){
-    try{
+    if (existing) {
+      try {
         await deleting(existing.id);
         dispatch(removefromwishlist(product.id));
         toast.info("removed from wishlist");
-    }
-    catch(error){
+      } catch (error) {
         console.log(error);
         toast.error("failed to remove from wishlist");
+      }
+
+      return;
     }
 
-    return;
-}
-        
-        const wishlistitem={
-            userid:userid,
-            productId:product.id,
-            name:product.name,
-            price:product.price,
-            image:product.image
-        };
-
-        try{
-            const data=await addtowishlist(wishlistitem);
-            dispatch(addwishlist(data))
-            toast.success("added to wishlist")
-
-        }
-        catch(error){
-            console.log(error);
-            toast.error("failed to add to wishlist")
-            
-        }
-    }
-
-    const handleremove=async (id,productId)=>{
-        try{
-            await deleting(id);
-            dispatch(removefromwishlist(productId))
-        }
-        catch(error){
-            console.log(error)
-        }
-    }
-    const handlebuynow=async ()=>{
-        if(!userid){
-            toast.warning("please login first")
-            navigate("/login")
-            return;
-        }
-        try{
-       const cartItem = {
+    const wishlistitem = {
       userid: userid,
       productId: product.id,
-      quantity: 1,
-      price:product.price,
-      image:product.image
-        }
-        await addcart(cartItem);
-        dispatch(addtocart(cartItem));
-        navigate("/checkout");
-       }catch(error){
-            toast.error("something went wrong")
-            console.log(error);
-            
-       }}
-    return (
-        <>
-        <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-            <div className="rounded-xl max-w-5xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    };
 
-        
-        <div className="relative">
-        <img src={product.image} className="aspect-square w-full rounded-lg object-cover"/>
-        <button
-        onClick={handlewishlist}
-        className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
-    >
-     <Heart
-    className={
-        wishlist.some((item) => item.productId === product.id)
-            ? "fill-red-500 text-red-500"
-            : "text-black"
+    try {
+      const data = await addtowishlist(wishlistitem);
+      dispatch(addwishlist(data));
+      toast.success("added to wishlist");
+    } catch (error) {
+      console.log(error);
+      toast.error("failed to add to wishlist");
     }
-/>
-    </button>
-        </div>
+  };
 
-        <div  className="flex flex-col items-start gap-4 pt-2 sm:gap-5 sm:pt-4">
-            <h1 className="font-bold  text-xs sm:text-sm text-2xl text-gray-500">YESTERA COLLECTION</h1>
-            <h1 className=" mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl text-[#4A2C22]">{product.name}</h1>
-            <p className="mt-4 font-semibold text-[#1F4D3A] text-xl sm:text-2xl">₹{product.price}</p>
-            <p className="mt-6 text-gray-700 text-base leading-7 sm:text-lg  text-xl">{product.description}</p>
-             <button onClick={async(e)=>{
-                e.preventDefault()
-                if(!userid){
-                    toast.warning("please login first")
-                    navigate("/login")
-                    return;
+  const handleremove = async (id, productId) => {
+    try {
+      await deleting(id);
+      dispatch(removefromwishlist(productId));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handlebuynow = async () => {
+    if (!userid) {
+      toast.warning("please login first");
+      navigate("/login");
+      return;
+    }
+    try {
+      const cartItem = {
+        userid: userid,
+        productId: product.id,
+        quantity: 1,
+        price: product.price,
+        image: product.image,
+      };
+      await addcart(cartItem);
+      dispatch(addtocart(cartItem));
+      navigate("/checkout");
+    } catch (error) {
+      toast.error("something went wrong");
+      console.log(error);
+    }
+  };
+  return (
+    <>
+      <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+        <div className="rounded-xl max-w-5xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
+          <div className="relative">
+            <img
+              src={product.image}
+              className="aspect-square w-full rounded-lg object-cover"
+            />
+            <button
+              onClick={handlewishlist}
+              className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
+            >
+              <Heart
+                className={
+                  wishlist.some((item) => item.productId === product.id)
+                    ? "fill-red-500 text-red-500"
+                    : "text-black"
+                }
+              />
+            </button>
+          </div>
+
+          <div className="flex flex-col items-start gap-4 pt-2 sm:gap-5 sm:pt-4">
+            <h1 className="font-bold  text-xs sm:text-sm text-2xl text-gray-500">
+              YESTERA COLLECTION
+            </h1>
+            <h1 className=" mt-4 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl text-[#4A2C22]">
+              {product.name}
+            </h1>
+            <p className="mt-4 font-semibold text-[#1F4D3A] text-xl sm:text-2xl">
+              ₹{product.price}
+            </p>
+            <p className="mt-6 text-gray-700 text-base leading-7 sm:text-lg  text-xl">
+              {product.description}
+            </p>
+            <button
+              onClick={async (e) => {
+                e.preventDefault();
+                if (!userid) {
+                  toast.warning("please login first");
+                  navigate("/login");
+                  return;
                 }
 
-                const cartitem={
-                      userid: userid,
-            productId: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            quantity: 1
+                const cartitem = {
+                  userid: userid,
+                  productId: product.id,
+                  name: product.name,
+                  price: product.price,
+                  image: product.image,
+                  quantity: 1,
                 };
-                try{
-                    const data=await addcart(cartitem)
-                    console.log("CART API SUCCESS:", data);
+                try {
+                  const data = await addcart(cartitem);
+                  console.log("CART API SUCCESS:", data);
 
-                toast.success("Added to cart!", {
-                position: "top-center",
-                autoClose: 3000
-            });
-                     
-                    //  toast.success("Added to cart!");
-                      
-                       dispatch(addtocart(product))
-                }catch(error){
-                      console.log("API ERROR:", error);
-                    console.log("ERROR RESPONSE:", error.response);
-                    toast.error("failed to add to cart")
-                    
+                  toast.success("Added to cart!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                  });
+
+                  //  toast.success("Added to cart!");
+
+                  dispatch(addtocart(product));
+                } catch (error) {
+                  console.log("API ERROR:", error);
+                  console.log("ERROR RESPONSE:", error.response);
+                  toast.error("failed to add to cart");
                 }
-            
-           }}
-             className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5">Add To Cart</button>
-             <button  className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5"
-              onClick={()=>handlebuynow()}>Buy Now</button>
+              }}
+              className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5"
+            >
+              Add To Cart
+            </button>
+            <button
+              className="bg-[#1F4D3A] rounded-lg sm:p-4 sm:text-base w-full text-white font-medium p-5"
+              onClick={() => handlebuynow()}
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+        {similarproducts.length > 0 && (
+          <div className="mx-auto max-w-5xl py-12">
+            <h2 className="mb-6 font-serif text-3xl text-[#4A2C22]">
+              You May Also Like
+            </h2>
 
-        </div>
-        </div>
-        </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {similarproducts.map((item) => (
+                <Link
+                  key={item.id}
+                  to={`/product/${item.id}`}
+                  className="group"
+                >
+                  <div className="overflow-hidden rounded-lg bg-white">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="aspect-square w-full object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-        </>
-    )
+                  <h3 className="mt-3 font-medium text-[#4A2C22]">
+                    {item.name}
+                  </h3>
+
+                  <p className="mt-1 font-semibold text-[#1F4D3A]">
+                    ₹{item.price}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
 export default Productdetails;

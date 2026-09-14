@@ -1,11 +1,17 @@
-import {Heart,Search,ShoppingCart,User,Package,X,} from "lucide-react";
+import { Heart, Search, ShoppingCart, User, Package, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-function MobileMenu({search,setsearch,clearsearch,handlesearch,userid,handlelogout,closeMenu,
+function MobileMenu({
+  search,
+  setsearch,
+  clearsearch,
+  handlesearch,
+  userid,
+  handlelogout,
+  closeMenu,
 }) {
   return (
     <div className="border-t border-stone-200 px-4 pb-5 pt-4 lg:hidden">
-
       {/* Search */}
       <div className="relative mb-5">
         <input
@@ -39,7 +45,6 @@ function MobileMenu({search,setsearch,clearsearch,handlesearch,userid,handlelogo
 
       {/* Navigation links */}
       <div className="flex flex-col gap-4 text-sm font-medium text-stone-700">
-
         <Link to="/" onClick={closeMenu}>
           HOME
         </Link>
@@ -66,14 +71,10 @@ function MobileMenu({search,setsearch,clearsearch,handlesearch,userid,handlelogo
         </Link>
 
         {userid && (
-          <button
-            onClick={handlelogout}
-            className="text-left"
-          >
+          <button onClick={handlelogout} className="text-left">
             LOGOUT
           </button>
         )}
-
       </div>
     </div>
   );

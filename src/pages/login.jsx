@@ -30,18 +30,23 @@ function Login() {
         toast.error("Incorrect Password");
         return;
       }
+      
       localStorage.setItem("userid", user.id);
       localStorage.setItem("userrole", user.role);
 
       dispatch(
         loginuser({
           userid: user.id,
-          userrole: user.role,
+          role: user.role,
         }),
       );
-      toast.success("Login Successfull!!");
-
-      navigate("/");
+      if(user.role === "admin"){
+        toast.success("admin logged in succesfully")
+        navigate("/admindashboard")
+      }else{
+        toast.success("Login Successfull!!");
+        navigate("/");
+      }
     } catch (error) {
       toast.warning("Something went Wrong");
       return;

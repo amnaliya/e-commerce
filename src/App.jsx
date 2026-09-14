@@ -26,6 +26,9 @@ import Layout from './components/layout';
 import Notfound from './pages/notfound';
 import Protection from './routes/protecton';
 
+import Dashboard from './pages/admin/Dashboard';
+import AdminProtect from './routes/AdminProtection';
+
 function App() {
   
   return (
@@ -34,7 +37,7 @@ function App() {
         <BrowserRouter>
         <Routes>
           <Route element={<Protection />}>
-          <Route path='*' element={<Notfound />} />
+       
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           </Route>
@@ -58,6 +61,12 @@ function App() {
   <Route path='/orders' element={<Orderhistory />} />
   </Route>
   </Route>
+  
+  <Route element={<AdminProtect />}>
+  <Route path='/admindashboard' element={<Dashboard />} />
+  </Route>
+
+     <Route path='*' element={<Notfound />} />
  </Routes>
 
  {/* <Footer /> */}

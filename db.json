@@ -421,7 +421,14 @@
       "email": "andc@gmail.com",
       "password": "nnnn",
       "id": "0I0hnoFbG6c"
-    }
+    },
+      {
+    "id": "1",
+    "fullName": "Admin",
+    "email": "admin@yestera.com",
+    "password": "admin123",
+    "role": "admin"
+  }
   ],
   "orders": [
     {

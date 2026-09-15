@@ -28,6 +28,8 @@ import Protection from './routes/protecton';
 
 import Dashboard from './pages/admin/Dashboard';
 import AdminProtect from './routes/AdminProtection';
+import AdminLayout from './components/admin/AdminLayout';
+import Products from './components/admin/products';
 
 function App() {
   
@@ -63,7 +65,10 @@ function App() {
   </Route>
   
   <Route element={<AdminProtect />}>
+  <Route element={<AdminLayout />}>
   <Route path='/admindashboard' element={<Dashboard />} />
+  <Route path='/admin/products' element={<Products />} />
+  </Route>
   </Route>
 
      <Route path='*' element={<Notfound />} />

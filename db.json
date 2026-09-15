@@ -281,14 +281,6 @@
       "description": "A beautiful Retro Poster for wall decor"
     },
     {
-      "id": "101",
-      "name": "Retro Poster 16",
-      "price": 230,
-      "category": "Retro Poster",
-      "image": "/images/retro poster 16.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
-    },
-    {
       "id": "37",
       "name": "Vintage phone 3",
       "price": 2500,
@@ -391,6 +383,13 @@
       "category": "Collectibles",
       "image": "/images/vintage dairy 2.jpg",
       "description": "A beautiful vintage clock for collectors."
+    },
+    {
+      "name": "Vintage Camera 4",
+      "category": "Cameras",
+      "price": "1450",
+      "image": "/images/vintage camera 4.jpg",
+      "id": "Q4Jo6WlwT2k"
     }
   ],
   "users": [
@@ -422,13 +421,13 @@
       "password": "nnnn",
       "id": "0I0hnoFbG6c"
     },
-      {
-    "id": "1",
-    "fullName": "Admin",
-    "email": "admin@yestera.com",
-    "password": "admin123",
-    "role": "admin"
-  }
+    {
+      "id": "1",
+      "fullName": "Admin",
+      "email": "admin@yestera.com",
+      "password": "admin123",
+      "role": "admin"
+    }
   ],
   "orders": [
     {

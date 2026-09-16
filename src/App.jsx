@@ -31,6 +31,7 @@ import AdminProtect from './routes/AdminProtection';
 import AdminLayout from './components/admin/AdminLayout';
 import Products from './components/admin/products';
 import Users from './components/admin/Users';
+import Orders from './components/admin/orders';
 
 function App() {
   
@@ -70,6 +71,7 @@ function App() {
   <Route path='/admindashboard' element={<Dashboard />} />
   <Route path='/admin/products' element={<Products />} />
   <Route path='/admin/users' element={<Users />} />
+  <Route path='/admin/orders' element={<Orders />} />
   </Route>
   </Route>
 

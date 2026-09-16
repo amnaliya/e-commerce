@@ -424,7 +424,8 @@
       "email": "rida@gmail.com",
       "password": "ridamol",
       "id": "Lytr8t--9mA",
-      "role": "user"
+      "role": "user",
+      "blocked": false
     },
     {
       "name": "Afla amj",
@@ -445,7 +446,8 @@
       "name": "Admin",
       "email": "admin@yestera.com",
       "password": "admin123",
-      "role": "admin"
+      "role": "admin",
+      "blocked": false
     }
   ],
   "orders": [
@@ -469,7 +471,8 @@
           "id": "H_Tdrl0SHQU"
         }
       ],
-      "id": "iaHn-54ytyw"
+      "id": "iaHn-54ytyw",
+      "status": "Shipped"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -509,7 +512,8 @@
           "id": "NC81KXgY-nI"
         }
       ],
-      "id": "0pmYZIfrN_k"
+      "id": "0pmYZIfrN_k",
+      "status": "Delivered"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -521,7 +525,8 @@
       "number": "07907582151",
       "total": 0,
       "items": [],
-      "id": "z7M-vleKGj8"
+      "id": "z7M-vleKGj8",
+      "status": "Pending"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -543,7 +548,8 @@
           "id": "84hTHy5kfio"
         }
       ],
-      "id": "ZXibwbBopNI"
+      "id": "ZXibwbBopNI",
+      "status": "Delivered"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -566,7 +572,8 @@
         }
       ],
       "paymentmethod": "card",
-      "id": "BJmedblE_Iw"
+      "id": "BJmedblE_Iw",
+      "status": "Shipped"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -609,60 +616,6 @@
           "image": "/images/vinyl record 5.jpg",
           "quantity": 2,
           "id": "KMMsZbV6o_M"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "12",
-          "name": "Vintage Lamp",
-          "price": 2500,
-          "image": "/images/vintage lamp 1.jpg",
-          "quantity": 1,
-          "id": "lPsrOgo2Aws"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "13",
-          "name": "Vintage mirror 3",
-          "price": 2500,
-          "image": "/images/vintage mirror 3.jpg",
-          "quantity": 1,
-          "id": "j2G_VPj_J1Q"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "28",
-          "name": "Retro Poster 7",
-          "price": 230,
-          "image": "/images/retro poster 7.jpg",
-          "quantity": 1,
-          "id": "imOJTrun8cg"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "44",
-          "name": "Vintage dairy 1",
-          "price": 2500,
-          "image": "/images/vintage dairy 1.jpg",
-          "quantity": 1,
-          "id": "1GgyIxSmtt4"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "22",
-          "name": "Retro Poster 1",
-          "price": 230,
-          "image": "/images/retro posters.jpg",
-          "quantity": 1,
-          "id": "7SVc94k0mik"
-        },
-        {
-          "userid": "FM6MF6qDAeU",
-          "productId": "41",
-          "name": "Vinyl record 8",
-          "price": 2500,
-          "image": "/images/Vinyl Record 8.jpg",
-          "quantity": 1,
-          "id": "hpzxYL-69Uw"
         }
       ],
       "paymentmethod": "cod",
@@ -719,7 +672,8 @@
         }
       ],
       "paymentmethod": "cod",
-      "id": "B0cuji-5Vv0"
+      "id": "B0cuji-5Vv0",
+      "status": "Shipped"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -746,48 +700,21 @@
   "cart": [
     {
       "userid": "L7OI6yeAUbg",
-      "productId": "47",
-      "name": "Vintage Flowers 2",
-      "price": 500,
-      "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
-      "quantity": 1,
-      "id": "CH493mlRsxM"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "14",
-      "name": "Vintage phone",
-      "price": 1650,
-      "image": "/images/vintage phone 2.jpg",
-      "quantity": 2,
-      "id": "4ADFbR4fIiM"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "6",
-      "name": "Vintage Record 2",
-      "price": 2500,
-      "image": "/images/vinyl records 2.jpg",
-      "quantity": 1,
-      "id": "qhBPiQdTRyg"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "46",
-      "name": "Vintage Flowers",
-      "price": 1350,
-      "image": "https://i.pinimg.com/736x/3f/49/8d/3f498d0af6721dfaac8a1a42e3a663c9.jpg",
-      "quantity": 1,
-      "id": "YlZZNLryrsA"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
       "productId": "39",
       "name": "Vinyl record 6",
       "price": 3000,
       "image": "/images/vinyl record 6.jpg",
       "quantity": 1,
       "id": "UBdKph3tMXo"
+    },
+    {
+      "userid": "1",
+      "productId": "16",
+      "name": "Vinyl record 5",
+      "price": 2500,
+      "image": "/images/vinyl record 5.jpg",
+      "quantity": 1,
+      "id": "1NJ7RGlr7yU"
     }
   ],
   "wishlist": [

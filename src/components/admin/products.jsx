@@ -9,6 +9,9 @@ function Products() {
   const products = useSelector((state) => state.products.products);
   const [form, setform] = useState(false);
   const[edit,setedit]=useState(null);
+  const[deleteproduct,setdeleteproduct]=useState(null)
+  const[currentpage,setcurrentpage]=useState(1);
+  const[itemsperpage]=useState(5)
   const [product, setproduct] = useState({
     name: "",
     category: "",
@@ -65,12 +68,29 @@ function Products() {
         const response=await axios.delete(`http://localhost:3000/products/${id}`)
         const updated=products.filter((item)=>item.id !== id);
         dispatch(settingproduct(updated));
+        setdeleteproduct(null);
         toast.success("Product deleted successfully!");
     }
 catch(error){
     console.log(error);
 }
 
+  }
+  const handlesoftdelete=async(id)=>{
+    const selected=products.find((item)=>item.id === id);
+    const updated={
+        ...selected,deleted:true,
+    }
+    await axios.patch(`http://localhost:3000/products/${id}`,updated)
+    const updatedproducts=products.map((item)=>{
+        if(item.id === id){
+            return updated
+        }
+        return item
+    })
+    dispatch(settingproduct(updatedproducts))
+    setdeleteproduct(null);
+    toast.success("Product Moved To Trash")
   }
   const handleedit=(product)=>{
     setproduct({
@@ -82,6 +102,42 @@ catch(error){
     setedit(product.id)
     setform(true);
   }
+  const handleupdatedproduct=async()=>{
+     if (!product.name || !product.category || !product.price || !product.image) {
+    toast.warning("Please fill all the fields");
+    return;
+  }
+  try{
+    const response=await axios.patch( `http://localhost:3000/products/${edit}`,
+        product
+    );
+    const updatedproducts=products.map((item)=>{
+        if(item.id ===edit){
+            return response.data
+        }
+        return item;
+    });
+    dispatch(settingproduct(updatedproducts))
+    setproduct({
+        name:"",
+        category:"",
+        price:"",
+        image:""
+    })
+    setedit(null);
+    setform(false);
+    toast.success("Product Updated Successfully")
+  }catch(error){
+    console.log(error)
+    toast.error("failed to edit")
+  }
+}
+const filteredProducts=products.filter((product)=>!product.deleted);
+const lastindex=currentpage * itemsperpage;
+const firstindex=lastindex -itemsperpage;
+const currentproduct=filteredProducts.slice(firstindex,lastindex);
+const totalpages=Math.ceil(filteredProducts.length/itemsperpage);
+
   return (
     <>
       <div>
@@ -145,7 +201,7 @@ catch(error){
             <div className="mt-4">
               <button
                 className="bg-[#1F4D3A] text-white px-4 py-2"
-                onClick={handleaddproduct}
+                onClick={edit ? handleupdatedproduct :handleaddproduct}
               >
                 {edit ? "Update Product" : "Add Product"}
               </button>
@@ -188,7 +244,8 @@ catch(error){
             </thead>
 
             <tbody>
-              {products.map((product) => (
+              {currentproduct.filter((product) => !product.deleted)
+              .map((product) => (
                 <tr
                   key={product.id}
                   className="border-b border-stone-100 hover:bg-stone-50 transition"
@@ -233,8 +290,8 @@ catch(error){
                        className="px-3 py-2 text-sm border border-stone-200 rounded-lg hover:bg-stone-100">
                         Edit
                       </button>
-
-                      <button onClick={()=>handledelete(product.id)}
+                     
+                      <button onClick={()=>setdeleteproduct(product.id)}
                       className="px-3 py-2 text-sm text-red-600 border border-red-100 rounded-lg hover:bg-red-50">
                         Delete
                       </button>
@@ -244,7 +301,49 @@ catch(error){
               ))}
             </tbody>
           </table>
+          <div className="flex items-center justify-center mt-6 gap-4">
+            <button onClick={()=>setcurrentpage(currentpage-1)}
+            disabled ={currentpage ===1}
+             className="px-4 py-2 rounded-lg bg-[#1F4D3A] text-white disabled:opacity-40">
+                Previous
+            </button>
+            <span className="text-[#4A2C22] font-medium">Page{currentpage} Of {totalpages}</span>
+            <button onClick={()=>setcurrentpage(currentpage+1)}
+            disabled={currentpage === totalpages}
+             className="px-4 py-2 rounded-lg bg-[#1F4D3A] text-white disabled:opacity-40">Next</button>
+          </div>
         </div>
+         {deleteproduct && (
+  <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+    <div className="bg-[#f7f3eb]  rounded-2xl p-6 w-full max-w-md shadow-xl">
+      <h2 className="text-xl font-bold text-[#4A2C22]">
+        Delete Product
+      </h2>
+
+      <p className="text-sm text-stone-500 mt-2">
+        How would you like to delete this product?
+      </p>
+
+      <div className="flex justify-end gap-3 mt-6">
+        <button  className="px-4 py-2 rounded-lg bg-[#a95b3c] text-white text-sm font-medium hover:bg-[#8f4930] transition"
+        onClick={()=>handlesoftdelete(deleteproduct)}>
+          Soft Delete
+        </button>
+
+        <button  className="px-4 py-2 rounded-lg bg-[#8b2e2e] text-white text-sm font-medium hover:bg-[#6f2222] transition"
+        onClick={()=>handledelete(deleteproduct)}>
+          Permanently Delete
+        </button>
+
+        <button     className="px-4 py-2 rounded-lg bg-[#e8dfd2] text-[#4A2C22] text-sm font-medium hover:bg-[#d8cdbd] transition"
+        onClick={() => setdeleteproduct(null)}>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </>
   );

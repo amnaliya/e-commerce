@@ -3,12 +3,14 @@ import cartslice from "../redux/cartslice"
 import authslice from "../redux/authslice";
 import wishlistslice from "../redux/wishlistslice"
 import Productreducer from "../redux/Admin/ProductSlice"
+import userslice from "../redux/Admin/Userslice"
 
  export const store=configureStore({
     reducer:{
         cart:cartslice,
         auth:authslice,
         wishlist:wishlistslice,
-        products:Productreducer
+        products:Productreducer,
+        users:userslice
     }
  })

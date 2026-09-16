@@ -30,6 +30,7 @@ import Dashboard from './pages/admin/Dashboard';
 import AdminProtect from './routes/AdminProtection';
 import AdminLayout from './components/admin/AdminLayout';
 import Products from './components/admin/products';
+import Users from './components/admin/Users';
 
 function App() {
   
@@ -68,6 +69,7 @@ function App() {
   <Route element={<AdminLayout />}>
   <Route path='/admindashboard' element={<Dashboard />} />
   <Route path='/admin/products' element={<Products />} />
+  <Route path='/admin/users' element={<Users />} />
   </Route>
   </Route>
 

@@ -3,7 +3,7 @@
     {
       "id": "4",
       "name": "Vintage Camera 4",
-      "price": 1300,
+      "price": "1399/-",
       "category": "Cameras",
       "image": "/images/vintage camera 4.jpg",
       "description": "A beautiful vintage camera for collectors and photography lovers."
@@ -51,7 +51,7 @@
     {
       "id": "6",
       "name": "Vintage Record 2",
-      "price": 2500,
+      "price": "2599/-",
       "category": "Vinyl Records",
       "image": "/images/vinyl records 2.jpg",
       "description": "A beautiful vinyl record for collectors."
@@ -385,11 +385,28 @@
       "description": "A beautiful vintage clock for collectors."
     },
     {
-      "name": "Vintage Camera 4",
+      "name": "rida",
       "category": "Cameras",
-      "price": "1450",
-      "image": "/images/vintage camera 4.jpg",
-      "id": "Q4Jo6WlwT2k"
+      "price": "2599/-",
+      "image": "/images/midlaj.jpeg",
+      "id": "NYoYZ_5YWLY",
+      "deleted": true
+    },
+    {
+      "name": "rida",
+      "category": "Cameras",
+      "price": "2599/-",
+      "image": "/images/midlaj.jpeg",
+      "id": "bwCnNHBbwNg",
+      "deleted": true
+    },
+    {
+      "name": "rida",
+      "category": "Cameras",
+      "price": "2599/-",
+      "image": "/images/midlaj.jpeg",
+      "id": "v-MBPOZHp9Y",
+      "deleted": true
     }
   ],
   "users": [

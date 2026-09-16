@@ -416,7 +416,8 @@
       "password": "12345",
       "confirm": "12345",
       "id": "L7OI6yeAUbg",
-      "role": "user"
+      "role": "user",
+      "blocked": false
     },
     {
       "name": "ridaaaa",
@@ -436,11 +437,12 @@
       "name": "new",
       "email": "andc@gmail.com",
       "password": "nnnn",
-      "id": "0I0hnoFbG6c"
+      "id": "0I0hnoFbG6c",
+      "role": "user"
     },
     {
       "id": "1",
-      "fullName": "Admin",
+      "name": "Admin",
       "email": "admin@yestera.com",
       "password": "admin123",
       "role": "admin"

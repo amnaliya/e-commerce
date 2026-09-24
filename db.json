@@ -3,10 +3,12 @@
     {
       "id": "4",
       "name": "Vintage Camera 4",
-      "price": "1399/-",
+      "price": 1399,
       "category": "Cameras",
       "image": "/images/vintage camera 4.jpg",
-      "description": "A beautiful vintage camera for collectors and photography lovers."
+      "description": "A beautiful vintage camera for collectors and photography lovers.",
+      "stock": 10,
+      "deleted": false
     },
     {
       "id": "16",
@@ -14,7 +16,8 @@
       "price": 2500,
       "category": "Vinyl Records",
       "image": "/images/vinyl record 5.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 12
     },
     {
       "id": "47",
@@ -22,7 +25,9 @@
       "price": 500,
       "category": "Collectibles",
       "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 18,
+      "deleted": false
     },
     {
       "id": "14",
@@ -30,7 +35,8 @@
       "price": 1650,
       "category": "Accessories",
       "image": "/images/vintage phone 2.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "12",
@@ -38,7 +44,9 @@
       "price": 1500,
       "category": "Accessories",
       "image": "/images/vintage lamp 1.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 0,
+      "deleted": false
     },
     {
       "id": "2",
@@ -46,15 +54,17 @@
       "price": 2500,
       "category": "Cameras",
       "image": "/images/vintage camera 2.jpg",
-      "description": "A beautiful vintage camera for collectors and photography lovers."
+      "description": "A beautiful vintage camera for collectors and photography lovers.",
+      "stock": 10
     },
     {
       "id": "6",
       "name": "Vintage Record 2",
-      "price": "2599/-",
+      "price": 2599,
       "category": "Vinyl Records",
       "image": "/images/vinyl records 2.jpg",
-      "description": "A beautiful vinyl record for collectors."
+      "description": "A beautiful vinyl record for collectors.",
+      "stock": 19
     },
     {
       "id": "46",
@@ -62,7 +72,8 @@
       "price": 1350,
       "category": "Collectibles",
       "image": "https://i.pinimg.com/736x/3f/49/8d/3f498d0af6721dfaac8a1a42e3a663c9.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 20
     },
     {
       "id": "9",
@@ -70,7 +81,8 @@
       "price": 1499,
       "category": "Accessories",
       "image": "/images/vintage clock 1.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "1",
@@ -78,7 +90,8 @@
       "price": 2500,
       "category": "Cameras",
       "image": "/images/vintage camera 1.jpg",
-      "description": "A beautiful vintage camera for collectors and photography lovers."
+      "description": "A beautiful vintage camera for collectors and photography lovers.",
+      "stock": 10
     },
     {
       "id": "39",
@@ -86,7 +99,8 @@
       "price": 3000,
       "category": "Vinyl Records",
       "image": "/images/vinyl record 6.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "10",
@@ -94,7 +108,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage clock 2.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "13",
@@ -102,7 +117,8 @@
       "price": 1130,
       "category": "Collectibles",
       "image": "/images/vintage mirror 3.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "3",
@@ -110,7 +126,8 @@
       "price": 2500,
       "category": "Cameras",
       "image": "/images/vintage camer 3.jpg",
-      "description": "A beautiful vintage camera for collectors and photography lovers."
+      "description": "A beautiful vintage camera for collectors and photography lovers.",
+      "stock": 10
     },
     {
       "id": "5",
@@ -118,7 +135,8 @@
       "price": 1750,
       "category": "Vinyl Records",
       "image": "/images/vinyl records 1.jpg",
-      "description": "A beautiful vinyl record for collectors."
+      "description": "A beautiful vinyl record for collectors.",
+      "stock": 10
     },
     {
       "id": "7",
@@ -126,7 +144,8 @@
       "price": 250,
       "category": "Vinyl Records",
       "image": "/images/vinyl records 3.jpg",
-      "description": "A beautiful vinyl record for collectors."
+      "description": "A beautiful vinyl record for collectors.",
+      "stock": 10
     },
     {
       "id": "8",
@@ -134,7 +153,8 @@
       "price": 1500,
       "category": "Vinyl Records",
       "image": "/images/vinyl records.4.jpg",
-      "description": "A beautiful vinyl record for collectors."
+      "description": "A beautiful vinyl record for collectors.",
+      "stock": 10
     },
     {
       "id": "11",
@@ -142,7 +162,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage clock 3.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "15",
@@ -150,7 +171,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage phone.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "17",
@@ -158,7 +180,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage clock 4.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "18",
@@ -166,7 +189,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage clock 5.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "19",
@@ -174,7 +198,8 @@
       "price": 2500,
       "category": "Collectibles",
       "image": "/images/vintage mirror 1.jpg",
-      "description": "A beautiful vintage mirror for collectors."
+      "description": "A beautiful vintage mirror for collectors.",
+      "stock": 10
     },
     {
       "id": "20",
@@ -182,7 +207,8 @@
       "price": 2500,
       "category": "Collectibles",
       "image": "/images/vintage mirror 2.jpg",
-      "description": "A beautiful vintage mirror for collectors."
+      "description": "A beautiful vintage mirror for collectors.",
+      "stock": 10
     },
     {
       "id": "21",
@@ -190,7 +216,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage watch 1.jpg",
-      "description": "A beautiful vintage watch for collectors."
+      "description": "A beautiful vintage watch for collectors.",
+      "stock": 10
     },
     {
       "id": "26",
@@ -198,7 +225,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 5.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "27",
@@ -206,7 +234,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 6.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "28",
@@ -214,7 +243,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 7.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "29",
@@ -222,7 +252,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 8.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "30",
@@ -230,7 +261,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 9.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "31",
@@ -238,7 +270,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 10.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "32",
@@ -246,7 +279,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 11.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "33",
@@ -254,7 +288,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 12.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "34",
@@ -262,7 +297,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 13.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "35",
@@ -270,7 +306,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 14 .jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "36",
@@ -278,7 +315,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 15.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "37",
@@ -286,7 +324,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage phone 3.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "38",
@@ -294,7 +333,8 @@
       "price": 2500,
       "category": "Accessories",
       "image": "/images/vintage phone 4.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "40",
@@ -302,7 +342,8 @@
       "price": 2500,
       "category": "Vinyl Records",
       "image": "/images/Vinyl Record 7.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "22",
@@ -310,7 +351,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro posters.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "23",
@@ -318,7 +360,9 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 2.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10,
+      "deleted": false
     },
     {
       "id": "24",
@@ -326,7 +370,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 3.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "25",
@@ -334,7 +379,8 @@
       "price": 230,
       "category": "Retro Poster",
       "image": "/images/retro poster 4.jpg",
-      "description": "A beautiful Retro Poster for wall decor"
+      "description": "A beautiful Retro Poster for wall decor",
+      "stock": 10
     },
     {
       "id": "48",
@@ -342,7 +388,8 @@
       "price": 2500,
       "category": "Collectibles",
       "image": "https://i.pinimg.com/736x/45/82/a6/4582a6eb901421d0eb6f2f6cea176815.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 0
     },
     {
       "id": "41",
@@ -350,7 +397,8 @@
       "price": 2500,
       "category": "Vinyl Records",
       "image": "/images/Vinyl Record 8.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "42",
@@ -358,7 +406,9 @@
       "price": 2500,
       "category": "Vinyl Records",
       "image": "https://i.pinimg.com/1200x/46/67/90/4667905556558e7ca0d6b0cf3d4946af.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10,
+      "deleted": false
     },
     {
       "id": "43",
@@ -366,7 +416,8 @@
       "price": 2500,
       "category": "Vinyl Records",
       "image": "https://i.pinimg.com/736x/9d/d5/c5/9dd5c55a47c470922d6f24e331d10714.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "44",
@@ -374,7 +425,8 @@
       "price": 2500,
       "category": "Collectibles",
       "image": "/images/vintage dairy 1.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "id": "45",
@@ -382,31 +434,38 @@
       "price": 2500,
       "category": "Collectibles",
       "image": "/images/vintage dairy 2.jpg",
-      "description": "A beautiful vintage clock for collectors."
+      "description": "A beautiful vintage clock for collectors.",
+      "stock": 10
     },
     {
       "name": "rida",
       "category": "Cameras",
-      "price": "2599/-",
+      "price": 2599,
       "image": "/images/midlaj.jpeg",
       "id": "NYoYZ_5YWLY",
       "deleted": true
     },
     {
-      "name": "rida",
+      "name": "rida jjjj",
       "category": "Cameras",
-      "price": "2599/-",
+      "price": "2599",
       "image": "/images/midlaj.jpeg",
-      "id": "bwCnNHBbwNg",
-      "deleted": true
+      "id": "QL65lgja0Fk",
+      "stock": 10
     },
     {
-      "name": "rida",
+      "name": "rida jjjj",
       "category": "Cameras",
-      "price": "2599/-",
+      "price": "2300",
       "image": "/images/midlaj.jpeg",
-      "id": "v-MBPOZHp9Y",
-      "deleted": true
+      "id": "O-PA6sMCM4c"
+    },
+    {
+      "name": "camera",
+      "category": "Cameras",
+      "price": "2300",
+      "image": "/images/midlaj.jpeg",
+      "id": "-p_fu20uxds"
     }
   ],
   "users": [
@@ -425,21 +484,23 @@
       "password": "ridamol",
       "id": "Lytr8t--9mA",
       "role": "user",
-      "blocked": false
+      "blocked": true
     },
     {
       "name": "Afla amj",
       "email": "aflaamj@gmail.com",
       "password": "afla",
       "id": "FM6MF6qDAeU",
-      "role": "user"
+      "role": "user",
+      "blocked": false
     },
     {
       "name": "new",
       "email": "andc@gmail.com",
       "password": "nnnn",
       "id": "0I0hnoFbG6c",
-      "role": "user"
+      "role": "user",
+      "blocked": false
     },
     {
       "id": "1",
@@ -472,7 +533,8 @@
         }
       ],
       "id": "iaHn-54ytyw",
-      "status": "Shipped"
+      "date": "2026-08-19T06:15:32.393Z",
+      "status": "Delivered"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -513,7 +575,8 @@
         }
       ],
       "id": "0pmYZIfrN_k",
-      "status": "Delivered"
+      "date": "2026-09-27T06:15:32.393Z",
+      "status": "Cancelled"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -526,7 +589,7 @@
       "total": 0,
       "items": [],
       "id": "z7M-vleKGj8",
-      "status": "Pending"
+      "status": "Cancelled"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -549,7 +612,8 @@
         }
       ],
       "id": "ZXibwbBopNI",
-      "status": "Delivered"
+      "date": "2026-08-13T06:15:32.393Z",
+      "status": "Cancelled"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -573,7 +637,8 @@
       ],
       "paymentmethod": "card",
       "id": "BJmedblE_Iw",
-      "status": "Shipped"
+      "date": "2026-09-11T06:15:32.393Z",
+      "status": "Delivered"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -596,6 +661,7 @@
         }
       ],
       "paymentmethod": "card",
+      "date": "2026-10-17T06:15:32.393Z",
       "id": "zlbpfM-fHNM"
     },
     {
@@ -619,6 +685,7 @@
         }
       ],
       "paymentmethod": "cod",
+      "date": "2026-07-17T06:15:32.393Z",
       "id": "rtjX8Cgdcnw"
     },
     {
@@ -651,7 +718,9 @@
         }
       ],
       "paymentmethod": "card",
-      "id": "aTp-TnMds8I"
+      "date": "2026-07-17T06:15:32.393Z",
+      "id": "aTp-TnMds8I",
+      "status": "Cancelled"
     },
     {
       "userid": "L7OI6yeAUbg",
@@ -694,19 +763,186 @@
         }
       ],
       "paymentmethod": "upi",
+      "date": "2026-07-17T06:15:32.393Z",
       "id": "Wy0IxFe7kVA"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "thahir",
+      "email": "vpthahir@gmail.com",
+      "address": "adf3qr13rv",
+      "city": "kodinhi",
+      "pincode": "2246",
+      "number": "222",
+      "total": 2150,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "47",
+          "name": "Vintage Flowers 2",
+          "price": 500,
+          "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
+          "quantity": 1,
+          "id": "_hgRf6yMY9o"
+        },
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "14",
+          "name": "Vintage phone",
+          "price": 1650,
+          "image": "/images/vintage phone 2.jpg",
+          "quantity": 1,
+          "id": "vXypeTE6zkA"
+        }
+      ],
+      "paymentmethod": "cod",
+      "date": "2026-07-17T06:15:32.393Z",
+      "id": "x0fkZZ598-4"
+    },
+    {
+      "userid": "Lytr8t--9mA",
+      "name": "amna",
+      "email": "SFV",
+      "address": "dCEWFWDE",
+      "city": "AEFGBT",
+      "pincode": "4426674",
+      "number": "35326789",
+      "total": 10230,
+      "items": [
+        {
+          "userid": "Lytr8t--9mA",
+          "productId": "33",
+          "name": "Retro Poster 12",
+          "price": 230,
+          "image": "/images/retro poster 12.jpg",
+          "quantity": 1,
+          "id": "USUlrp1N07U"
+        },
+        {
+          "userid": "Lytr8t--9mA",
+          "productId": "42",
+          "name": "Vinyl record 9",
+          "price": 2500,
+          "image": "https://i.pinimg.com/1200x/46/67/90/4667905556558e7ca0d6b0cf3d4946af.jpg",
+          "quantity": 3,
+          "id": "vIyE7Bnxf9M"
+        },
+        {
+          "userid": "Lytr8t--9mA",
+          "productId": "45",
+          "name": "Vintage dairy 2",
+          "price": 2500,
+          "image": "/images/vintage dairy 2.jpg",
+          "quantity": 1,
+          "id": "ypy7pLNiObk"
+        }
+      ],
+      "paymentmethod": "card",
+      "date": "2026-06-17T06:20:04.319Z",
+      "id": "zgiBh07J1S0"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "thahir",
+      "email": "vpthahir@gmail.com",
+      "address": "adf3qr13rv",
+      "city": "kodinhi",
+      "pincode": "2222",
+      "number": "222",
+      "total": 5000,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "38",
+          "name": "Vintage phone 4",
+          "price": 2500,
+          "image": "/images/vintage phone 4.jpg",
+          "quantity": 1,
+          "id": "3cadD1vVd3s"
+        },
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "21",
+          "name": "Vintage watch 1",
+          "price": 2500,
+          "image": "/images/vintage watch 1.jpg",
+          "quantity": 1,
+          "id": "LogOJqnz1LE"
+        }
+      ],
+      "paymentmethod": "card",
+      "date": "2026-05-17T09:27:10.053Z",
+      "id": "mSC1zGHgzes",
+      "status": "Processing"
+    },
+    {
+      "userid": "0I0hnoFbG6c",
+      "name": "amna",
+      "email": "SFV",
+      "address": "sd",
+      "city": "AEFGBT",
+      "pincode": "4426674",
+      "number": "35326789",
+      "total": 6650,
+      "items": [
+        {
+          "userid": "0I0hnoFbG6c",
+          "productId": "2",
+          "name": "Vintage Camera 2",
+          "price": 2500,
+          "image": "/images/vintage camera 2.jpg",
+          "quantity": 1,
+          "id": "sIM2cTHtxZk"
+        },
+        {
+          "userid": "0I0hnoFbG6c",
+          "productId": "3",
+          "name": "Vintage Camera 3",
+          "price": 2500,
+          "image": "/images/vintage camer 3.jpg",
+          "quantity": 1,
+          "id": "4gaVHI8b-rk"
+        }
+      ],
+      "paymentmethod": "cod",
+      "date": "2026-09-19T04:39:48.884Z",
+      "id": "xQCuOfEkAus"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "name": "ridha",
+      "email": "ridha@gmail.com",
+      "address": "skufhqegiurqvhgnj",
+      "city": "owe4jr",
+      "pincode": "934",
+      "number": "23423547",
+      "total": 5500,
+      "items": [
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "39",
+          "name": "Vinyl record 6",
+          "price": 3000,
+          "image": "/images/vinyl record 6.jpg",
+          "quantity": 1,
+          "id": "0ncCD4iy2DY"
+        },
+        {
+          "userid": "L7OI6yeAUbg",
+          "productId": "10",
+          "name": "Vintage clock 2",
+          "price": 2500,
+          "image": "/images/vintage clock 2.jpg",
+          "quantity": 1,
+          "id": "7w4-p07QtCY"
+        }
+      ],
+      "paymentmethod": "card",
+      "date": "2026-09-19T04:43:05.223Z",
+      "id": "Y2iGLbcAmpY"
     }
   ],
   "cart": [
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "39",
-      "name": "Vinyl record 6",
-      "price": 3000,
-      "image": "/images/vinyl record 6.jpg",
-      "quantity": 1,
-      "id": "UBdKph3tMXo"
-    },
     {
       "userid": "1",
       "productId": "16",
@@ -715,6 +951,24 @@
       "image": "/images/vinyl record 5.jpg",
       "quantity": 1,
       "id": "1NJ7RGlr7yU"
+    },
+    {
+      "userid": "0I0hnoFbG6c",
+      "productId": "2",
+      "name": "Vintage Camera 2",
+      "price": 2500,
+      "image": "/images/vintage camera 2.jpg",
+      "quantity": 1,
+      "id": "sIM2cTHtxZk"
+    },
+    {
+      "userid": "L7OI6yeAUbg",
+      "productId": "47",
+      "name": "Vintage Flowers 2",
+      "price": 500,
+      "image": "https://i.pinimg.com/736x/1d/c9/45/1dc9451fd4a92a6ee0c77485c8cdc6b8.jpg",
+      "quantity": 2,
+      "id": "0VS226dZGz0"
     }
   ],
   "wishlist": [
@@ -741,22 +995,6 @@
       "price": 2500,
       "image": "/images/vinyl record 5.jpg",
       "id": "m9wJ1LQdTJs"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "4",
-      "name": "Vintage Camera 4",
-      "price": 1300,
-      "image": "/images/vintage camera 4.jpg",
-      "id": "rxGAA8umOQ4"
-    },
-    {
-      "userid": "L7OI6yeAUbg",
-      "productId": "12",
-      "name": "Vintage Lamp",
-      "price": 1500,
-      "image": "/images/vintage lamp 1.jpg",
-      "id": "mjc-XrXMMbA"
     },
     {
       "userid": "L7OI6yeAUbg",

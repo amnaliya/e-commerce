@@ -53,7 +53,6 @@ function Shop() {
       fetchwishlist();
     }
   }, [userid]);
-
   const fetchwishlist = async () => {
     try {
       const data = await getwishlist(userid);
@@ -75,7 +74,7 @@ function Shop() {
         value.price > 1500 &&
         value.price <= 2000) ||
       (pricefilter === "above2000" && value.price > 2000);
-    return matchsearch && matchprice;
+     return !value.deleted && matchsearch && matchprice;
   });
 
   const sorted = filtering.sort((a, b) => {
@@ -92,6 +91,10 @@ function Shop() {
     if (!userid) {
       toast.warning("please login first");
       navigate("/login");
+      return;
+    }
+    if(product.stock <=0){
+      toast.error("sorry,the item is out of stock")
       return;
     }
     const cartitem = {

@@ -40,9 +40,9 @@
 
 //  return (
 //     <>
-//     <Cartcontext.Provider value={{cart,setcart,addtocart,increasing,decreasing,removing,clearcart}}>
-//         {children}
-//     </Cartcontext.Provider>
+    // <Cartcontext.Provider value={{cart,setcart,addtocart,increasing,decreasing,removing,clearcart}}>
+    //     {children}
+    // </Cartcontext.Provider>
 //     </>
 //  )
 //  }

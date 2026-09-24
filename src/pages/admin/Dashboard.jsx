@@ -8,6 +8,8 @@ import {getorders} from "../../services/Admin/Orderservice"
 import { settingorders } from "../../redux/Admin/Orderslice";
 import{settingusers} from "../../redux/Admin/Userslice";
 import { Link } from "react-router-dom";
+import { getMonthlyrevenue } from "./getrevenuedata";
+import { AreaChart,Area,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer } from "recharts";
 
 function Dashboard(){
     const dispatch=useDispatch();
@@ -17,6 +19,9 @@ function Dashboard(){
     const totalrevenue=orders.reduce((total,order)=>{
         return total + Number(order.total)
     },0)
+    const monthlyrevenue=getMonthlyrevenue(orders);
+    console.log("Orders:", orders);
+  console.log("Monthly Revenue:", monthlyrevenue);
     useEffect(() => {
   fetchproducts();
 }, []);
@@ -83,44 +88,73 @@ const getstatusstyle = (status) => {
   </p>
 </div>
     
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-8">
 
-  <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#e8dfd2]">
+  <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-[#e8dfd2]">
     <p className="text-sm text-gray-500">Total Products</p>
-    <h2 className="text-3xl font-semibold text-[#1F4D3A] mt-2">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-[#1F4D3A] mt-2">
       {products.filter((product) => !product.deleted).length}
     </h2>
   </div>
 
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#e8dfd2]">
     <p className="text-sm text-gray-500">Total Users</p>
-    <h2 className="text-3xl font-semibold text-[#1F4D3A] mt-2">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-[#1F4D3A] mt-2">
       {users.length}
     </h2>
   </div>
 
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#e8dfd2]">
     <p className="text-sm text-gray-500">Total Orders</p>
-    <h2 className="text-3xl font-semibold text-[#1F4D3A] mt-2">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-[#1F4D3A] mt-2">
       {orders.length}
     </h2>
   </div>
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#e8dfd2]">
   <p className="text-sm text-gray-500">Total Revenue</p>
 
-  <h2 className="text-3xl font-semibold text-[#1F4D3A] mt-2">
+  <h2 className="text-2xl sm:text-3xl font-semibold text-[#1F4D3A] mt-2">
     ₹{totalrevenue}
   </h2>
 </div>
 </div>
+<div className="bg-white rounded-xl shadow-sm p-5 mt-8">
+  <h2 className="text-xl font-semibold text-[#4A2C22] mb-5">
+    Revenue Details
+  </h2>
+
+  <div className="w-full h-[250px] sm:h-[300px]">
+    <ResponsiveContainer width="100%" height="100%">
+      <AreaChart data={monthlyrevenue}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+       <YAxis
+  tickFormatter={(value) => `₹${value}`}  width={60}
+/>
+
+<Tooltip
+  formatter={(value) => [`₹${value}`, "Revenue"]}
+/>
+   <Area
+        type="monotone"
+        dataKey="revenue"
+        stroke="#325527"
+        fill="#24411a"
+        fillOpacity={0.15}
+        strokeWidth={3}
+      />
+      </AreaChart>
+    </ResponsiveContainer>
+  </div>
+</div>
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
  <div className="bg-white rounded-xl shadow-sm p-5">
     <h2 className="text-xl font-semibold text-[#4A2C22] mb-4">
-      Recent Products
+      Recent Orders
     </h2>
 
-  <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-    <table className="w-full">
+  <div className="overflow-x-auto">
+  <table className="w-full min-w-[600px]">
       <thead className="bg-[#1F4D3A] text-white">
         <tr>
           <th className="px-4 py-3 text-left">Order ID</th>
@@ -131,7 +165,17 @@ const getstatusstyle = (status) => {
       </thead>
 
       <tbody>
-        {orders.slice(0, 6).map((order) => (
+         {orders.length === 0 ? (
+    <tr>
+      <td
+        colSpan="4"
+        className="text-center py-8 text-gray-500"
+      >
+        No orders found
+      </td>
+    </tr>
+  ) : (
+        orders.slice(0, 6).map((order) => (
           <tr key={order.id} className="border-b">
             <td className="px-4 py-3">
               #{order.id}
@@ -155,7 +199,7 @@ const getstatusstyle = (status) => {
   </span>
 </td>
           </tr>
-        ))}
+        )))}
       </tbody>
     </table>
     <div className="flex justify-end mt-4">
@@ -183,9 +227,19 @@ const getstatusstyle = (status) => {
       </thead>
 
       <tbody>
-        {products
+         {products.length === 0 ? (
+    <tr>
+      <td
+        colSpan="4"
+        className="text-center py-8 text-gray-500"
+      >
+        No Products found
+      </td>
+    </tr>
+  ) : (
+        products
           .filter((product) => !product.deleted)
-          .slice(0, 4)
+          .slice(0, 5)
           .map((product) => (
             <tr
               key={product.id}
@@ -217,7 +271,7 @@ const getstatusstyle = (status) => {
               </td>
 
             </tr>
-          ))}
+          )))}
       </tbody>
 
     </table>

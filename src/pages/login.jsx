@@ -10,7 +10,6 @@ function Login() {
   const dispatch = useDispatch();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-
   const handlelogin = async (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
@@ -30,7 +29,11 @@ function Login() {
         toast.error("Incorrect Password");
         return;
       }
-      
+      if (user.blocked) {
+        toast.error("Your account has been blocked");
+        return;
+      }
+
       localStorage.setItem("userid", user.id);
       localStorage.setItem("userrole", user.role);
 
@@ -40,10 +43,10 @@ function Login() {
           role: user.role,
         }),
       );
-      if(user.role === "admin"){
-        toast.success("admin logged in succesfully")
-        navigate("/admindashboard")
-      }else{
+      if (user.role === "admin") {
+        toast.success("admin logged in succesfully");
+        navigate("/admindashboard");
+      } else {
         toast.success("Login Successfull!!");
         navigate("/");
       }

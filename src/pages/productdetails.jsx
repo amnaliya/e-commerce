@@ -100,6 +100,10 @@ function Productdetails() {
       navigate("/login");
       return;
     }
+    if(product.stock <=0){
+      toast.error("the item is out of stock,sorryy..")
+      return;
+    }
     try {
       const cartItem = {
         userid: userid,
@@ -118,7 +122,7 @@ function Productdetails() {
   };
   return (
     <>
-      <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+      <div className="min-h-screen bg-[#f7f3eb]  px-4 py-8 sm:px-6 sm:py-10 lg:px-5 lg:py-7">
         <div className="rounded-xl max-w-5xl bg-white shadow-sm p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 lg:p-8 grid grid-cols-1 gap-8 mx-auto">
           <div className="relative">
             <img
@@ -149,6 +153,9 @@ function Productdetails() {
             <p className="mt-4 font-semibold text-[#1F4D3A] text-xl sm:text-2xl">
               ₹{product.price}
             </p>
+             <p className="mt-6 text-gray-700 text-base leading-7 sm:text-lg  text-xl">
+              Total Stock: {product.stock}
+            </p>
             <p className="mt-6 text-gray-700 text-base leading-7 sm:text-lg  text-xl">
               {product.description}
             </p>
@@ -160,7 +167,10 @@ function Productdetails() {
                   navigate("/login");
                   return;
                 }
-
+                if(product.stock <=0){
+                  toast.error("the item is out of stock")
+                  return;
+                }
                 const cartitem = {
                   userid: userid,
                   productId: product.id,

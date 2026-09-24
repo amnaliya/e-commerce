@@ -25,6 +25,15 @@ function Checkout() {
   const total = cart.reduce((total, product) => {
     return total + product.price * product.quantity;
   }, 0);
+  console.log("Cart:", cart);
+
+cart.forEach((product) => {
+  console.log(
+    product.name,
+    "price:", product.price,
+    "quantity:", product.quantity
+  );
+});
 
   async function handlecheck() {
     if (total === 0) {
@@ -51,6 +60,7 @@ function Checkout() {
       total,
       items: cart,
       paymentmethod,
+      date: new Date().toISOString(),
     };
     try {
       const response = await axios.post("http://localhost:3000/orders", order);
